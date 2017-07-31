@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <stacked-menu-container class="row" ng-if="!fullMapLoaded">
+        <!--isSingleStackedMenu - rootScope var changed on statechange-->
+        <div ng-if="!isSingleStackedMenu" ui-view="categories-menu"
+             class="catMenu slide-left col-xs-3">
+        </div>
+        <div ng-if="isSingleStackedMenu" ui-view="categories-menu"
+             class="catMenu slide-left col-xs-6">
+        </div>
+        <div ng-if="!isSingleStackedMenu" ui-view="left-menu-2"
+             class="catMenu slide-right col-xs-3">
+        </div>
+
+        <main-content>
+            <!--<div ui-view="map-items" class="slide-right"></div>-->
+            <div ui-view="full-map" id="full-map" class="mainMap col-xs-6"></div>
+        </main-content>
+    </stacked-menu-container>
+</div>

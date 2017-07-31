@@ -1,0 +1,35 @@
+<div class="header" ng-click="$ctrl.toggle()" ng-transclude="menuHeader"></div>
+
+<div class="nano">
+    <div class="nano-content">
+
+<!--<div>-->
+  <!--<div>-->
+    <ul>
+      <li class="spinner" ng-if="!menuCtrl.menus.length"></li>
+
+      <li class="menuItem" ng-class="{'activeItem': $index == menuCtrl.active[0]}"
+        ng-repeat="item0 in menuCtrl.menus | orderBy: $ctrl.topItemsOrder.val:$ctrl.topItemsOrder.reverse | limitTo: $ctrl.topItemsLimit">
+        <div stacked-menu-level="0"
+          ng-click="menuCtrl.navigate([$index], item0)">
+        </div>
+
+        <div ng-if="$index == menuCtrl.active[0]"
+          ng-init="items = menuCtrl.getOrLoadMenus([$index])">
+          <ul ng-if="items">
+            <li class="spinner" ng-if="items.loading"></li>
+            <li ng-if="!items.loading && !items.length">
+                <h4 level>{{"NAVIGATION.PLACEHOLDER_EMPTY"|translate}}</h4>
+            </li>
+
+            <li ng-repeat="item1 in items | orderBy: $ctrl.itemsOrder.val:$ctrl.itemsOrder.reverse | limitTo: $ctrl.itemsLimit">
+              <div stacked-menu-level="1"
+                ng-click="menuCtrl.choose([$parent.$index, $index], item1)">
+              </div>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

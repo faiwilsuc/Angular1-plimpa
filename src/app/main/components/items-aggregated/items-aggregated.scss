@@ -1,0 +1,52 @@
+items-aggregated {
+  .fa-facebook {
+    color: #3b5998; // facebook blue
+    line-height: 4rem;
+  }
+
+  .kaidee-icon {
+    background-size: 60% !important;
+    background-image: url('../assets/img/icons/kaidee_favicon.png');
+  }
+
+  .craigslist-icon {
+    background-size: 60% !important;
+    background-image: url('../assets/img/icons/craigslist_favicon.png');
+  }
+  .subTimestamp {
+    margin-bottom: 3px !important;
+  }
+  .subLocation {
+    color: #757575;
+    font-size: 13px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  i {
+    font-size: 14px;
+  }
+  p {
+    margin-top: 3px !important;
+  }
+}
+.expandBlock {
+  width: 30px;
+  height: 30px;
+  top: 15px;
+  right: 15px;
+  position: absolute;
+  background-color: #F44336;
+  border-radius: 3px;
+  z-index: 100;
+  &:hover {
+    cursor: pointer;
+  }
+  i {
+    position: relative;
+    font-size: 25px;
+    bottom: -2px;
+    left: 12px;
+    color: white;
+  }
+}

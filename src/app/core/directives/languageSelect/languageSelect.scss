@@ -1,0 +1,58 @@
+.languageSelect {
+    padding: 0;
+    margin: 0;
+    display: block;
+    .languageSelectList {
+        position: relative;
+        width: 120px;
+        display: block;
+        min-height: 40px;
+        border-bottom: 1px solid #eee;
+        padding: 6px 0 6px;
+        margin: 0;
+        &.active,
+        &:focus {
+            outline: none;
+        }
+        &:hover {
+            background-color: #f5f5f5;
+        }
+        &:last-child {
+            border-bottom: 0;
+        }
+        .lang {
+            width: 25px;
+            height: 25px;
+            background-color: #eee;
+            float: left;
+            border-radius: 50%;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 50%;
+            opacity: .82;
+            &.gbt {
+                background-image: url(../../assets/img/gbp.png);
+            }
+            &.thai {
+                background-image: url(../../assets/img/thai.png);
+            }
+            &.au {
+                background-image: url(../../assets/img/au.png);
+                background-position: 0% 50%;
+            }
+            &.nz {
+                background-image: url(../../assets/img/nz.png);
+                background-position: 0% 50%;
+            }
+        }
+        span {
+            float: left;
+            line-height: 25px;
+            padding-left: 12px;
+            font-family: "roboto";
+            font-weight: 500;
+            color: #656565;
+        }
+    }
+}

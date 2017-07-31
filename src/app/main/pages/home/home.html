@@ -1,0 +1,97 @@
+<ui-view></ui-view>
+<div ng-if="!IsMobileDevice()" class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="homePageTitle">
+              <div translate="{{ 'HOME.TEXT.HEADER_1' }}"></div>
+            </h2>
+        </div>
+    </div>
+</div>
+<div ng-if="!IsMobileDevice()" class="homePromoContainer">
+    <div class="homePromo">
+        <div class="homePromoElm" ng-repeat="elm in ['baby', 'car', 'command', 'laptop', 'shirt', 'application-form', 'house', 'smartphone', 'scooter', 'music-player']">
+            <div class="homePromoIcons" ng-style="{'background-image': 'url(assets/img/icons/' + elm + '.png)'}"></div>
+            <div class="homePromoMainLogo" ng-if="$last"></div>
+        </div>
+    </div>
+</div>
+<div ng-if="!IsMobileDevice()" class="cont-bg">
+    <div class="container">
+        <div class="row">
+            <br>
+            <div class="col-md-12">
+                <h2 class="homePageTitle">
+                  {{ 'HOME.TEXT.HEADER_2'| translate }}
+                </h2>
+            </div>
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-sm-4 col-xs-6 homeBuyingIntroText">
+                        <img src="assets/img/icons/application-form.png" alt="">
+                        <h2>{{ 'HOME.TEXT.SUBHEADER_1'| translate }}</h2>
+                        <p>
+                          {{ 'HOME.TEXT.SHORT_1'| translate }}
+                        </p>
+                    </div>
+                    <div class="col-sm-4 col-xs-6 homeBuyingIntroText">
+                        <img src="assets/img/icons/application-form.png" alt="">
+                        <h2>{{ 'HOME.TEXT.SUBHEADER_2'| translate }}</h2>
+                        <p>
+                          {{ 'HOME.TEXT.SHORT_2'| translate }}
+                        </p>
+                    </div>
+                    <div class="col-sm-4 col-xs-8 col-sm-offset-0 col-xs-offset-2 homeBuyingIntroText">
+                        <img src="assets/img/icons/application-form.png" alt="">
+                        <h2>{{ 'HOME.TEXT.SUBHEADER_3'| translate }}</h2>
+                        <p>
+                          {{ 'HOME.TEXT.SHORT_3'| translate }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <button class="homeActionButton">
+                    <a href="" ui-sref="home.post" onclick="window.scrollTo(0,0)">{{'HEADER.BTN_SELL' | translate}}</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-if="!IsMobileDevice()" class="container">
+    <div class="row">
+        <br>
+        <div class="col-md-12">
+            <h2 class="homePageTitle">
+                {{'HOME.TEXT.HEADER_3'| translate }}
+            </h2>
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-sm-5 col-xs-12 homeBuyingIntroText homeBuyingIntroTextNoBorders">
+                    <h2> {{ 'HOME.TEXT.SUBHEADER_4'| translate }}</h2>
+                    <p>
+                      {{ 'HOME.TEXT.SHORT_4'| translate }}
+                    </p>
+                </div>
+                <div class="col-sm-2 col-xs-12 homeBuyingIntroText homeBuyingIntroTextNoBorders homeBuyingIntroTextMobileHidden">
+                    <img src="assets/img/category-icons/meeting_icon.png" alt="" class="mainImg">
+                </div>
+                <div class="col-sm-5 col-xs-12 homeBuyingIntroText homeBuyingIntroTextNoBorders">
+                    <h2> {{ 'HOME.TEXT.SUBHEADER_5'| translate }}</h2>
+                    <p>
+                      {{ 'HOME.TEXT.SHORT_5'| translate }}
+                    </p>
+                </div>
+                <div class="col-sm-4 col-sm-offset-4 col-xs-12 homeBuyingIntroText homeBuyingIntroTextNoBorders">
+                    <h2>{{ 'HOME.TEXT.SUBHEADER_6'| translate }}</h2>
+                    <p>
+                      {{ 'HOME.TEXT.SHORT_6'| translate }}
+                    </p>
+                </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+</div>

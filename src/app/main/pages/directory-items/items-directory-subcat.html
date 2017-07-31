@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="categoriesMenu categoriesMenuMain">
+      <!--<div class="nano-content">-->
+        <ul class="categoriesMenuList">
+          <li class="cmLi" ng-repeat="elm in subcategoriesList | filter: elm.name" ng-class="{'activeMenuList': $index == menuListO}">
+            <div class="catMList" ng-style="{'background-image': 'url(assets/img/category-icons/' + elm.image + ')'}"></div>
+            <a ui-sref="items-directory.items({ catId: elm.catId, subId: elm.id, subSlug: ( (elm.name | translate) | slugify ) })" class="catMName">{{elm.name | translate}} <span ng-show="elm.items_count">({{elm.items_count || ''}})</span></a>
+          </li>
+        </ul>
+      <!--</div>-->
+    </div>
+  </div>
+</div>

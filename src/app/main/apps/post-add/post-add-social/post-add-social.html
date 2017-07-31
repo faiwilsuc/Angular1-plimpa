@@ -1,0 +1,67 @@
+<div class="nano">
+    <div class="nano-content postAddContainerFormInsider">
+        <div class="postAddContainerFormInsiderCont">
+            <h3 class="postAddContainerTitle">
+              {{"POST.SOCIAL.SELECT"| translate}}
+            </h3>
+            <div class="panel-body socialListsCont">
+                <div class="col-sm-2"></div>
+                <div class="row">
+                    <div class="socialLists">
+                        <div class="checkbox">
+                            <label>
+                                Facebook
+                                <input type="checkbox" value="Facebook" ng-model="AddItem.socialRepost.facebook" checked="checked">
+                            </label>
+                            <img class="logo-fb" src="assets/img/fb-logo.jpg">
+                        </div>
+                    </div>
+                    <div class="socialLists">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="Craigslist" ng-model="AddItem.socialRepost.craigslist" checked="checked"> Craigslist
+                            </label>
+                            <img class="logo-fb" src="assets/img/logo-cl.png">
+                        </div>
+                    </div>
+                    <!-- <div class="socialLists">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="Twitter" ng-model="socialRepost.twitter" checked="checked"> Twitter
+                            </label>
+                            <img class="logo-fb" src="assets/img/logo-tw.png">
+                        </div>
+                    </div>
+                    <div class="socialLists">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="Instagram" ng-model="socialRepost.instagram" checked="checked"> Instagram
+                            </label>
+                            <img class="logo-fb" src="assets/img/logo-in.png">
+                        </div>
+                    </div> -->
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="col-md-12">
+    <div class="divider"></div>
+    <button class="btn btn-success pfContinue" ng-click="submitForm()" ng-disabled="postAdd_form.$invalid">
+        Submit
+    </button>
+</div> -->
+<div class="postAddContainerFooter">
+    <div class="pfButtons">
+        <div class="pfPrevious" ui-sref="home.post.location">
+          {{"POST.BTN.BACK"| translate}}
+        </div>
+        <div class="pfContinue" ng-click="submitForm()" ng-if="user.active">
+          {{"POST.BTN.SUBMIT"| translate}}
+        </div>
+        <div class="pfContinue" ui-sref="home.post.register" ng-if="!user.active">
+          {{"POST.BTN.NEXT"| translate}}
+        </div>
+    </div>
+</div>

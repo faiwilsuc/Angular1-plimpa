@@ -1,0 +1,16 @@
+<div class="postAddContainerBefore" ui-sref="home"></div>
+<div class="slide-top postAddContainer">
+    <div class="loadingWait" ng-if="responseWait">
+        <div class="spinner"></div>
+    </div>
+    <div class="postAddContainerHeader">
+        Sell items - {{postAddInfo.title || 'Response'}}
+        <i class="material-icons" ui-sref="home">close</i>
+    </div>
+    <ul class="userAccountListing" ng-if="false">
+        <li ng-repeat="elm in postAddInfo.pages" ng-class="{'active': postAddInfo.title == elm.title}" ng-style="{'width': (100/postAddInfo.pages.length) +'%'}">
+            <a ui-sref="{{elm.sref}}">{{elm.title}}</a>
+        </li>
+    </ul>
+    <div ui-view="my-ads" class="postAddContainerForm"></div>
+</div>

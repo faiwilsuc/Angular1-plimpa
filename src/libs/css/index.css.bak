@@ -1,0 +1,1236 @@
+@charset "UTF-8";
+@font-face {
+    font-family: Roboto-Regular;
+    src: url("../../fonts/Roboto-Regular.ttf");
+}
+
+body {
+    font-family: "Roboto-Regular", sans-serif;
+    overflow-x: hidden;
+}
+
+.mainNav {
+    width: 100%;
+    height: auto;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.mainNav .nav-container {
+    width: 670px;
+    position: relative;
+    height: 90px;
+    margin: 0 auto;
+}
+
+.mainNav .nav-container .nav-logo {
+    width: 150px;
+    height: 100%;
+    background-image: url("../../assets/img/logo3.png");
+    background-position: 50% 25%;
+    background-size: 120%;
+    background-repeat: no-repeat;
+    position: relative;
+    float: left;
+}
+
+.mainNav .nav-container .nav-currency {
+    width: 150px;
+    height: 100%;
+    position: relative;
+    float: left;
+    padding: 22px 0 34px;
+}
+
+.mainNav .nav-container .nav-currency .nav-currency-img {
+    width: 50%;
+    float: left;
+    position: relative;
+    height: 100%;
+    text-align: right;
+    padding: 2px 8px;
+}
+
+.mainNav .nav-container .nav-currency .nav-currency-img img {
+    width: 25px;
+    height: 25px;
+    position: relative;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 0;
+}
+
+.mainNav .nav-container .nav-currency .nav-currency-val {
+    width: 50%;
+    float: left;
+    position: relative;
+    height: 100%;
+    text-align: center;
+    border-left: 1px solid #eee;
+    color: #9e9e9e;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 26px;
+}
+
+.mainNav .nav-container .nav-currency .nav-currency-val span {
+    font-size: 18px;
+    position: relative;
+    top: 2px;
+    margin-right: 2px;
+    font-weight: normal;
+}
+
+.mainNav .nav-container .nav-user {
+    width: 40px;
+    height: 100%;
+    position: relative;
+    float: left;
+    padding: 22px 0 34px;
+}
+
+.mainNav .nav-container .nav-user .nav-user-icon {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-left: 1px solid #eee;
+    padding: 2px 2px 2px 12px;
+}
+
+.mainNav .nav-container .nav-user .nav-user-icon img {
+    width: 22px;
+}
+
+.mainNav .nav-container .nav-menu {
+    width: 330px;
+    height: 100%;
+    position: relative;
+    float: left;
+    padding: 0 40px;
+    margin: 0;
+}
+
+.mainNav .nav-container .nav-menu li {
+    padding: 30px 0;
+    position: relative;
+    font-size: 12px;
+    text-align: center;
+    margin: 0 0px 0 12px;
+    float: left;
+}
+
+.mainNav .nav-container .nav-menu li:first-child {
+    margin-left: 0;
+}
+
+.mainNav .nav-container .nav-menu li:last-child {
+    margin-left: 16px;
+}
+
+.mainNav .nav-container .nav-menu li a {
+    color: #151515;
+    letter-spacing: -.46px;
+}
+
+.mainNav .mainNavBottom {
+    width: 100%;
+    height: 35px;
+    position: relative;
+    display: block;
+    background-color: #df2228;
+}
+
+.mainFooter {
+    width: 100%;
+    height: auto;
+    background-color: #ffffff;
+    position: relative;
+    display: block;
+}
+
+.mainFooter .mainFooterTop {
+    width: 100%;
+    height: 37px;
+    position: relative;
+    display: block;
+    background-color: #df2228;
+}
+
+.mainFooter .footer-container {
+    width: 450px;
+    position: relative;
+    margin: 0 auto;
+    padding: 16px 4px 6px;
+    display: block;
+}
+
+.mainFooter .footer-container .footer-copyrights {
+    padding: 10px 0 0;
+    width: 100%;
+}
+
+.mAddMainCont {
+    position: relative;
+}
+
+.mAddMainCont .mAddMainContInside {
+    position: relative;
+    z-index: 1;
+}
+
+.mAddMainCont .mAdBg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    top: 0;
+    left: 0;
+    background-image: url("../../img/map.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.mAddMainCont .mAdBg:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #ffffff;
+    top: 0;
+    left: 0;
+    opacity: .72;
+}
+
+.vmContainer {
+    width: 470px !important;
+    height: auto;
+    background-color: #ffffff;
+    position: relative;
+    margin: 0 auto;
+    left: -19px;
+    top: -50px;
+    margin-bottom: -100px;
+    z-index: 1;
+    min-height: 350px;
+    overflow: hidden;
+    padding: 0 !important;
+    box-shadow: 0 6px 24px 0px rgba(0, 0, 0, 0.4);
+}
+
+.vmContainer #form-container-wizard {
+    margin-bottom: 0;
+}
+
+.vmContainer .panel {
+    border: none;
+    box-shadow: none;
+    margin-bottom: 0;
+}
+
+.vmContainer .page-header {
+    padding: 0 !important;
+}
+
+.vmContainer .vmTitle {
+    width: 100%;
+    height: 37px;
+    position: relative;
+    margin: 0;
+    background-color: #df2127;
+}
+
+.vmContainer .vmTitle h2 {
+    margin: 0;
+    line-height: 37px;
+    color: #ffffff;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+.vmContainer .formItem {
+    padding-bottom: 0;
+}
+
+.vmContainer .formItem .formGroupLast {
+    margin-bottom: 0;
+}
+
+.vmContainer .formItem .control-label {
+    text-align: left;
+    font-size: 16px;
+    line-height: 32px;
+    left: 2px;
+    letter-spacing: .2px;
+    color: #212121;
+    padding-top: 0;
+}
+
+.vmContainer .formItem .formItemCont {
+    padding: 0 20px 0 6px;
+}
+
+.vmContainer .formItem .formItemCont select,
+.vmContainer .formItem .formItemCont input,
+.vmContainer .formItem .formItemCont textarea {
+    width: 100%;
+    position: relative;
+    border-radius: 6px;
+    border-color: #212121;
+    padding-left: 6px;
+}
+
+.vmContainer .formItem .formItemCont input {
+    height: 30px;
+    top: -2px;
+    position: relative;
+}
+
+.vmContainer .formItem .formItemCont select {
+    margin-bottom: 20px;
+    margin-top: -2px;
+}
+
+.vmContainer .formItem .formItemCont select.formItemLastCategory {
+    margin-bottom: 4px;
+}
+
+.vmContainer .formItem .formItemCont textarea {
+    height: 90px;
+}
+
+.vmContainer .formItem .formItemCont .formSelectFileIMgCont {
+    position: relative;
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    overflow-x: scroll;
+    display: inline-block;
+    margin-bottom: 0;
+    height: 100px;
+}
+
+.vmContainer .formItem .formItemCont .formSelectFileIMgCont .formSelectFileIMg {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    float: left;
+    border-radius: 12px;
+    border: 1px solid #212121;
+    margin-right: 10px;
+    top: 2px;
+}
+
+.vmContainer .formItem .formItemCont .formSelectFileIMgCont .formSelectFileIMg input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.vmContainer .formItem .formItemCont .formSelectFileIMgCont .formSelectFileIMg:nth-child(1) {
+    left: 0;
+}
+
+.vmContainer .formItem .formItemCont .formSelectFileIMgCont .formSelectFileIMg:nth-child(2) {
+    left: 90px;
+}
+
+.vmContainer .formItem .formItemCont .formSelectFileIMgCont .formSelectFileIMg:nth-child(3) {
+    left: 180px;
+}
+
+.vmContainer .formItem .formItemCont .formSelectFileIMgCont .formSelectFileIMg:nth-child(4) {
+    left: 270px;
+}
+
+.vmContainer .formItem .formItemCont .formSelectFileIMgCont .formSelectFileIMg:before {
+    content: "+";
+    position: absolute;
+    color: #212121;
+    font-size: 32px;
+    line-height: 82px;
+    text-align: center;
+    width: 100%;
+    left: -1px;
+}
+
+.vmContainer .formItemFooter {
+    border-top: 0;
+    margin-top: 0;
+    position: relative;
+    padding: 8px 22px;
+    background-color: transparent;
+    margin-bottom: 4px;
+}
+
+.vmContainer .formItemFooter .btn-previous,
+.vmContainer .formItemFooter .btn-continue {
+    min-width: 125px;
+    height: 32px;
+    position: relative;
+    line-height: 32px;
+    font-size: 17px;
+    padding: 0 4px;
+    font-weight: 500;
+    text-align: center;
+    background-color: #80be41;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vmContainer .formItemFooter .btn-previous .arrowPrevious,
+.vmContainer .formItemFooter .btn-previous .arrowContinue,
+.vmContainer .formItemFooter .btn-continue .arrowPrevious,
+.vmContainer .formItemFooter .btn-continue .arrowContinue {
+    width: 40px;
+    height: 30px;
+    position: relative;
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    background-image: url("../../assets/img/arrow-right.png");
+}
+
+.vmContainer .formItemFooter .btn-previous {
+    background-color: #a61719;
+}
+
+.vmContainer .formItemFooter .btn-previous .arrowPrevious {
+    background-image: url("../../assets/img/arrow-left.png");
+}
+
+.vmContainer .formItemFooterInfo {
+    width: 100%;
+    height: 40px;
+    position: relative;
+    background-color: #df2127;
+}
+
+.vmContainer .formItemFooterInfo ul {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    padding: 12px 14px;
+}
+
+.vmContainer .formItemFooterInfo ul li {
+    float: left;
+    margin-right: 14px;
+    position: relative;
+    color: #ffffff;
+}
+
+.vmContainer .formItemFooterInfo ul li:before {
+    content: "-";
+    position: absolute;
+    left: -10px;
+    color: #ffffff;
+    width: 10px;
+    height: 10px;
+    top: -2px;
+}
+
+.vmContainer .formItemFooterInfo ul li:first-child:before {
+    display: none;
+}
+
+.vmContainer .formItemFooterInfo ul li:last-child {
+    margin-right: 0;
+}
+
+.vmContainer .mainTitle {
+    font-size: 23px;
+    color: #212121;
+    margin-top: 38px;
+    margin-left: 13px;
+    margin-right: 13px;
+    margin-bottom: 12px;
+    letter-spacing: .1px;
+}
+
+.vmContainer .mainTitle.mainTitle2 {
+    margin-top: 18px;
+    font-size: 21px;
+    letter-spacing: .4px;
+    line-height: 26px;
+    text-align: center;
+    margin-left: 4px;
+}
+
+.vmContainer .halfButton {
+    background-color: #80be41;
+    color: #ffffff;
+    float: left;
+    height: 30px;
+    border-radius: 6px;
+    top: -2px;
+    position: relative;
+    font-size: 16px;
+    line-height: 30px;
+    padding: 0;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-left: -6px;
+    width: calc(38% + 6px);
+}
+
+.vmContainer .halfInput {
+    width: 62% !important;
+    float: left;
+}
+
+.vmContainer .mDivider {
+    font-size: 20px;
+    text-align: center;
+    color: #212121;
+    margin-bottom: 20px;
+}
+
+.vmContainer .mExtraInfo {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 45px;
+}
+
+.vmContainer .mExtraInfo h2 {
+    margin-top: 6px;
+    position: relative;
+    font-size: 22px;
+    letter-spacing: .46px;
+    margin-bottom: 12px;
+    color: #212121;
+}
+
+.vmContainer .mExtraInfo a {
+    margin-top: 12px;
+    position: relative;
+    display: inline-block;
+    width: auto;
+    min-width: 125px;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 6px;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 0;
+    background-color: #80be41;
+    color: #ffffff;
+}
+
+.vmContainer .socialListsCont {
+    margin-bottom: 50px;
+}
+
+.vmContainer .socialListsCont .socialLists {
+    margin: 0 auto;
+    position: relative;
+    display: block;
+    width: 200px;
+    height: 85px;
+    float: none;
+    padding: 0;
+    padding-top: 16px;
+}
+
+.vmContainer .socialListsCont .socialLists img {
+    padding: 0;
+    margin: 0;
+    float: left;
+    min-width: 52px !important;
+    min-height: 52px !important;
+    max-width: 52px !important;
+    max-height: 52px !important;
+}
+
+.vmContainer .socialListsCont .socialLists label {
+    width: 145px;
+    float: right;
+    font-size: 20px;
+    height: 40px;
+    padding-top: 16px;
+}
+
+.vmContainer .socialListsCont .socialLists label input {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    float: right;
+}
+
+.vmContainer .socialListsCont .socialLists label input {
+    position: relative;
+    cursor: pointer;
+    outline: none;
+}
+
+.vmContainer .socialListsCont .socialLists label input:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    width: 20px;
+    height: 20px;
+}
+
+.vmContainer .socialListsCont .socialLists label input:checked:before {
+    content: "✔";
+    height: 100%;
+    position: absolute;
+    top: -4px;
+}
+
+.vmContainer .socialListsCont .socialLists label input:after {
+    border: 2px solid #9e9e9e;
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    cursor: pointer;
+    outline: none;
+}
+
+.vmLoginContainer {
+    width: 588px !important;
+    height: auto;
+    background-color: #ffffff;
+    position: relative;
+    margin: 0 auto;
+    left: -30px;
+    top: -50px;
+    margin-bottom: -100px;
+    z-index: 1;
+    min-height: 550px;
+    overflow: hidden;
+    padding: 0 !important;
+    box-shadow: 0 6px 24px 0px rgba(0, 0, 0, 0.4);
+}
+
+.vmLoginContainer .vmTitle {
+    width: 100%;
+    height: 37px;
+    position: relative;
+    margin: 0;
+    background-color: #df2127;
+    text-align: center;
+}
+
+.vmLoginContainer .vmTitle h2 {
+    margin: 0;
+    line-height: 37px;
+    color: #ffffff;
+    position: relative;
+}
+
+.vmLoginContainer .signWithFb {
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+}
+
+.vmLoginContainer .signWithFb .fromImg {
+    width: 250px;
+    height: 50px;
+    display: inline-block;
+    margin: 12px auto;
+    left: 8px;
+    position: relative;
+    background-color: transparent;
+    border: none;
+}
+
+.vmLoginContainer .signInputFields {
+    width: 250px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 18px;
+    padding-top: 6px;
+    left: -2px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.vmLoginContainer .signInputFields input {
+    width: 100%;
+    height: 35px;
+    border-radius: 6px;
+    border-color: #212121;
+    padding-left: 6px;
+    margin-bottom: 6px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.vmLoginContainer .signInputFields::-webkit-input-placeholder {
+    font-size: 18px;
+}
+
+.vmLoginContainer .signInputFields::-moz-placeholder {
+    font-size: 18px;
+}
+
+.vmLoginContainer .signInputFields:-ms-input-placeholder {
+    font-size: 18px;
+}
+
+.vmLoginContainer .signInputFields:-moz-placeholder {
+    font-size: 18px;
+}
+
+.vmLoginContainer .signInputFields .loginBtn {
+    margin-top: 8px;
+    position: relative;
+    min-width: 140px;
+    width: auto;
+    display: inline-block;
+    background-color: #80be41;
+    border-color: #80be41;
+    font-size: 22px;
+    height: 35px;
+    line-height: 35px;
+    padding: 0;
+    font-weight: 500;
+}
+
+.vmLoginContainer .registerInputFields {
+    margin-bottom: 0;
+}
+
+.vmLoginContainer .registerInputFields input {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.vmLoginContainer .registerInputFields .registerBtn {
+    margin-top: 0px;
+    margin-bottom: 0;
+}
+
+.vmLoginContainer .registerInputFields::-webkit-input-placeholder {
+    font-size: 18px;
+}
+
+.vmLoginContainer .registerInputFields::-moz-placeholder {
+    font-size: 18px;
+}
+
+.vmLoginContainer .registerInputFields:-ms-input-placeholder {
+    font-size: 18px;
+}
+
+.vmLoginContainer .registerInputFields:-moz-placeholder {
+    font-size: 18px;
+}
+
+.vmLoginContainer .vmRegDivider {
+    width: 100%;
+    height: 10px;
+}
+
+.vmLoginContainer .formItemFooterInfo {
+    width: 100%;
+    height: 40px;
+    position: relative;
+    background-color: #df2127;
+    margin: 0;
+}
+
+.vmLoginContainer .formItemFooterInfo ul {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    padding: 12px 14px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.vmLoginContainer .formItemFooterInfo ul li {
+    margin-right: 14px;
+    position: relative;
+    color: #ffffff;
+    display: inline-flex;
+    display: inline-block;
+}
+
+.vmLoginContainer .formItemFooterInfo ul li:before {
+    content: "-";
+    position: absolute;
+    left: -10px;
+    color: #ffffff;
+    width: 10px;
+    height: 10px;
+    top: -2px;
+}
+
+.vmLoginContainer .formItemFooterInfo ul li:first-child:before {
+    display: none;
+}
+
+.vmLoginContainer .formItemFooterInfo ul li:last-child {
+    margin-right: 0;
+}
+
+.mAdBg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    top: 0;
+    left: 0;
+    background-image: url("../../img/map.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.mAdBg:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #ffffff;
+    top: 0;
+    left: 0;
+    opacity: .72;
+}
+
+.homeMapContainer {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: inline-block;
+}
+
+.homeMap {
+    background-color: #f44336 !important;
+    width: 100% !important;
+    height: calc(100% - 94px) !important;
+    padding: 0;
+    margin: 0;
+    bottom: -2px;
+    border-bottom: 0 !important;
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spinner {
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.mapLoading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 22;
+}
+
+.spinner {
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.spinner:before {
+    content: 'Loading…';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 36px;
+    height: 36px;
+    margin-top: -10px;
+    margin-left: -10px;
+}
+
+.spinner:not(:required):before {
+    content: '';
+    border-radius: 50%;
+    border-top: 2px solid #205c5c;
+    border-right: 2px solid transparent;
+    animation: spinner .6s linear infinite;
+    -webkit-animation: spinner .6s linear infinite;
+}
+
+.mapSearchPlaceholder {
+    width: 550px;
+    min-height: 120px;
+    position: absolute;
+    top: -2px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background-color: #ffffff;
+    z-index: 2;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    padding: 20px 16px 12px;
+}
+
+.mapSearchPlaceholder .mapSIMain {
+    margin-bottom: 12px;
+}
+
+.mapSearchPlaceholder input {
+    width: 100%;
+    height: 32px;
+    border-radius: 3px;
+    border: 1px solid #eee;
+    margin: 0;
+    background-color: #f7f7f7;
+}
+
+.mapSearchPlaceholder input:hover,
+.mapSearchPlaceholder input:active,
+.mapSearchPlaceholder input:focus {
+    outline: none;
+    background-color: #f5f5f5;
+    box-shadow: none;
+}
+
+.mapSearchPlaceholder input:focus {
+    border-color: rgba(33, 33, 33, 0.25);
+}
+
+.mapSearchPlaceholder .mapSIHalf input {
+    width: 38%;
+    margin: 0;
+}
+
+.mapSearchPlaceholder .mapSIHalf button {
+    width: 22%;
+    margin: 0;
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.toggle {
+    -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.toggle.ng-enter {
+    opacity: 0;
+    transition-duration: 250ms;
+    -webkit-transition-duration: 250ms;
+}
+
+.toggle.ng-enter-active {
+    opacity: 1;
+}
+
+.toggle.ng-leave {
+    opacity: 1;
+    transition-duration: 250ms;
+    -webkit-transition-duration: 250ms;
+}
+
+.toggle.ng-leave-active {
+    opacity: 0;
+}
+
+.toggle.ng-hide-add {
+    transition-duration: 250ms;
+    -webkit-transition-duration: 250ms;
+    opacity: 1;
+}
+
+.toggle.ng-hide-add.ng-hide-add-active {
+    opacity: 0;
+}
+
+.toggle.ng-hide-remove {
+    transition-duration: 250ms;
+    -webkit-transition-duration: 250ms;
+    display: block !important;
+    opacity: 0;
+}
+
+.toggle.ng-hide-remove.ng-hide-remove-active {
+    opacity: 1;
+}
+
+.slide-top {
+    -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.slide-top.ng-enter {
+    transform: translateY(60px);
+    -ms-transform: translateY(60px);
+    -webkit-transform: translateY(60px);
+    transition-duration: 250ms;
+    -webkit-transition-duration: 250ms;
+    opacity: 0;
+}
+
+.slide-top.ng-enter-active {
+    transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    opacity: 1;
+}
+
+.slide-top.ng-leave {
+    transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transition-duration: 250ms;
+    -webkit-transition-duration: 250ms;
+    opacity: 1;
+}
+
+.slide-top.ng-leave-active {
+    transform: translateY(60px);
+    -ms-transform: translateY(60px);
+    -webkit-transform: translateY(60px);
+    opacity: 0;
+}
+
+.slide-top.ng-hide-add {
+    transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transition-duration: 250ms;
+    -webkit-transition-duration: 250ms;
+    opacity: 1;
+}
+
+.slide-top.ng-hide-add.ng-hide-add-active {
+    transform: translateY(60px);
+    -ms-transform: translateY(60px);
+    -webkit-transform: translateY(60px);
+    opacity: 0;
+}
+
+.slide-top.ng-hide-remove {
+    transform: translateY(60px);
+    -ms-transform: translateY(60px);
+    -webkit-transform: translateY(60px);
+    transition-duration: 250ms;
+    -webkit-transition-duration: 250ms;
+    display: block !important;
+    opacity: 0;
+}
+
+.slide-top.ng-hide-remove.ng-hide-remove-active {
+    transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    opacity: 1;
+}
+
+h2.homePageTitle {
+    position: relative;
+    text-align: center;
+    display: block;
+    font-size: 48px;
+    opacity: 0.64;
+    letter-spacing: -0.13rem;
+    color: rgba(0, 0, 0, 0.9);
+    margin-top: 140px;
+    font-family: "Roboto-Regular", sans-serif;
+}
+
+h2.homePageTitle span {
+    display: block;
+    font-size: 16px;
+    margin-top: 12px;
+    letter-spacing: 1px;
+    font-style: italic;
+    opacity: .8;
+}
+
+h2.homePageTitle + p {
+    margin: 0 auto;
+    width: 60%;
+    margin-top: 18px;
+    font-size: 16px;
+}
+
+.homeActionButton {
+    display: inline-block;
+    margin: 12px auto;
+    position: relative;
+    left: 0;
+    right: 0;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.08), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    text-decoration: none;
+    color: #FFF;
+    text-align: center;
+    letter-spacing: 0.8px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background-clip: padding-box;
+    text-transform: uppercase;
+    border: none;
+    padding: 0 24px;
+    height: 50px;
+    margin-top: 28px;
+    font-size: 18px;
+    background-color: #e53935;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.homeActionButton:hover {
+    background-color: rgba(0, 0, 0, 0.86);
+}
+
+.homePromoContainer {
+    width: 100%;
+    min-height: 135px;
+    position: relative;
+    background-color: #ffffff;
+    padding: 60px 20px 20px;
+    padding-top: 110px;
+    border-top: 35px solid #f44336;
+}
+
+.homePromoContainer .homePromo {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    display: block;
+    list-style: none;
+}
+
+.homePromoContainer .homePromo .homePromoElm {
+    width: 10%;
+    height: 60px;
+    display: inline-block;
+    padding: 5px;
+}
+
+.homePromoContainer .homePromo .homePromoElm:last-child {
+    border-right: 0;
+}
+
+.homePromoContainer .homePromo .homePromoElm .homePromoIcons {
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    position: relative;
+    opacity: .58;
+}
+
+.homePromoContainer .homePromo .homePromoElm .homePromoIcons:hover {
+    pointer-events: none;
+}
+
+.homePromoContainer .homePromo .homePromoMainLogo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -35px;
+    margin: 0 auto;
+    display: block;
+    width: 240px;
+    height: 120px;
+    background-color: rgba(255, 255, 255, 0.92);
+    z-index: 1;
+    background-image: url("../../assets/img/logo-main.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.homeBuyingIntroContainer {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+}
+
+.homeBuyingIntroContainer .homeBuyingIntroItem {
+    width: auto;
+    margin: 0 auto;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding: 32px;
+    box-sizing: border-box;
+}
+
+.homeBuyingIntroContainer .homeBuyingIntroItem .homeBuyingIntroText {
+    width: 100%;
+    float: left;
+    position: relative;
+}
+
+.homeBuyingIntroContainer .homeBuyingIntroItem .homeBuyingIntroText ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.homeBuyingIntroContainer .homeBuyingIntroItem .homeBuyingIntroText ul li {
+    width: 33%;
+    position: relative;
+    min-height: 200px;
+    display: inline-block;
+    float: left;
+    padding: 12px 32px;
+    border-right: 1px solid #eee;
+}
+
+.homeBuyingIntroContainer .homeBuyingIntroItem .homeBuyingIntroText ul li:last-child {
+    border-right: 0;
+}
+
+.homeBuyingIntroContainer .homeBuyingIntroItem .homeBuyingIntroText ul li i {
+    width: 100%;
+    height: 48px;
+    line-height: 48px;
+    font-size: 48px;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.homeBuyingIntroContainer .homeBuyingIntroItem .homeBuyingIntroText ul li h2 {
+    margin-top: 44px;
+    text-align: center;
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.7);
+    line-height: 36px;
+    font-weight: 500;
+}

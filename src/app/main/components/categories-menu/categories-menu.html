@@ -1,0 +1,36 @@
+<stacked-menu
+  class="itemsFlat headerWhenStacked"
+  menus="$ctrl.menus"
+  get-menus="$ctrl.getMenus"
+  on-choose="$ctrl.onChoose(key, obj)">
+
+  <menu-header>
+    Categories
+  </menu-header>
+
+  <item-templates>
+    <div level="0">
+      <div class="itemIcon"
+        ng-style="{'background-image': 'url(assets/img/category-icons/' + item0.image + ')'}">
+      </div>
+      <a href="">
+        {{item0.name | translate}}
+        <span class="badge"
+          ng-show="item0.items_count"
+          ng-bind="item0.items_count">
+        </span>
+      </a>
+    </div>
+
+    <div level="1">
+      <i class="itemIcon cmArrowIcon material-icons">keyboard_arrow_right</i>
+      <a class="" href="">
+        {{item1.name | translate}}
+        <span class="badge"
+          ng-show="item1.items_count"
+          ng-bind="item1.items_count">
+        </span>
+      </a>
+    </div>
+  </item-templates>
+</stacked-menu>

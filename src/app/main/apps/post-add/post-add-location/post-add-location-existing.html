@@ -1,0 +1,48 @@
+<div class="col-md-12">
+    <button type="button" class="postAddContainerButton" ng-click="markCondo()">{{"POST.LOCATION.CONFIRM.CHANGE_LOCATION_NOAUTH"|translate}}</button>
+</div>
+<div class="markerMapPos">
+    <div class="col-md-12 pfWrapper pfMapSelected">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <i class="material-icons chosenMapIcon">beenhere</i>
+            </div>
+            <div class="col-md-12 col-sm-12 pfLeft">
+                <label>{{"POST.LOCATION.ADDR"| translate}}</label>
+            </div>
+            <div class="col-md-12 col-sm-12 pfRight">
+                <p>{{AddItem.location.condo_address || AddItem.location.condo_address_iw}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 pfWrapper" ng-if="(user | isEmpty) && !AddItem.location.condo_address_iw">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 pfLeft">
+                <label>{{"POST.LOCATION.EXISTING.ADDR"| translate}}</label>
+            </div>
+            <div class="col-md-12 col-sm-12 pfRight">
+                <!-- <button class="saveAddr">Save address</button> -->
+                <textarea cols="30" rows="10" ng-focus="scrollCenter()" placeholder="Type your location address here" name="condo_address" ng-model="AddItem.location.address" ng-minlength=4 ng-maxlength=60 required></textarea>
+                <div class="error" ng-show="postAdd_form.condo_address.$dirty && postAdd_form.condo_address.$invalid">
+                    <small class="error" ng-show="postAdd_form.condo_address.$error.required">{{"POST.LOCATION.ERR.ADDR_REQUIRED"| translate}}</small>
+                    <small class="error" ng-show="postAdd_form.condo_address.$error.minlength">{{"POST.LOCATION.ERR.ADDR_MIN"| translate}}</small>
+                    <small class="error" ng-show="postAdd_form.condo_address.$error.maxlength">{{"POST.LOCATION.ERR.ADDR_MAX"| translate}}</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 pfWrapper" ng-if="AddItem.location.condo_address_iw && AddItem.location.location_type">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 pfLeft">
+                <label>{{"POST.LOCATION.TYPE.HEADER"| translate}}</label>
+            </div>
+            <div class="col-md-12 pRadio">
+                <label class="radio" ng-repeat="elm in condoType | filter:{id: AddItem.location.location_type}">
+                    <input ng-focus="scrollCenter()" id="radio1" type="radio" name="radios" ng-model="AddItem.location.location_type" ng-value="elm.id" checked>
+                    <span class="outer"><span class="inner"></span></span>
+                    {{elm.name | translate}}
+                </label>
+            </div>
+        </div>
+    </div>
+</div>

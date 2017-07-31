@@ -1,0 +1,75 @@
+<div stacked-menu-compat class="stacked-menu opened"><!-- FIXME remove -->
+  <div class="header">
+    <menu-header ng-click="menuCtrl.toggle()">
+      <a class="subCategoriesBackButton" href="" ui-sref="home.subcat({id:itemVal.category_id, subId:itemVal.subcategory_id})" ng-click="closeMapOpenedSingleItem()">{{"NAVIGATION.BTN.BACK"|translate}}</a>
+    </menu-header>
+  </div>
+
+<div class="categoriesMenu nano" ng-class="{'categoriesMenuToggled': true}">
+    <div class="nano-content">
+        <div class="col-md-12 openedElmDatasLoadingClass" ng-if="!itemVal">
+            <div class="spinner"></div>
+        </div>
+        <div class="subCategories container-fluid" ng-show="itemVal">
+            <div class="slideCont">
+                <div uib-carousel active="carouselProps.active" interval="carouselProps.interval" no-wrap="carouselProps.noWrapSlides" no-pause='true' ng-if="true">
+                    <div uib-slide ng-repeat="slide in itemVal.itemImages" index="$index" class="slideImages">
+                        <a class="magnificImg itemSingleImg" ng-repeat="el in itemVal.itemImages track by $index" href="{{getImageUrls(itemVal.condoId, itemVal.itemId, el)}}" ng-show="$index == 0">
+                            <img imageonload default-image="../../assets/img/loader.gif" fallback-image="../../assets/img/default-image.svg" ng-src="{{getImageUrls(itemVal.condoId, itemVal.itemId, slide)}}" alt="{{getImageUrls(itemVal.condoId, itemVal.itemId, slide)}}" style="margin:auto;">
+                        </a>
+                    </div>
+                    <div ng-if="itemVal.itemImages | isEmpty">
+                        <a href="" class="itemSingleImg itemSingleImgDefault" index="1">
+                            <img src="../../assets/img/default-image.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 no-padding">
+                <h3>{{itemVal.itemTitle}}</h3>
+                <p>{{itemVal.itemPrice}} THB</p>
+                <div class="publishedTime">
+                    <i class="material-icons">access_time</i><span>{{itemVal.timestamp | datefromNow}}</span>
+                </div>
+            </div>
+            <div>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a data-target="#description" aria-controls="description" role="tab" data-toggle="tab">{{"ITEM.TAB.DESCRIPTION"|translate}}</a></li>
+                    <li role="presentation"><a data-target="#contacts" aria-controls="contacts" role="tab" data-toggle="tab">{{"ITEM.TAB.CONTACTS"|translate}}</a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="description">
+                        <div class="col-md-12" ng-bind-html="itemVal.itemDescr | contain_newlines">
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="contacts">
+                        <dl class="tabInfoList">
+                            <li ng-show="itemVal.itemPhone">
+                                <p>
+                                    <b>{{"ITEM.PHONE"|translate}}</b>: {{itemVal.itemPhone}}
+                                </p>
+                            </li>
+                            <li ng-show="itemVal.itemEmail">
+                                <p>
+                                    <b>{{"ITEM.EMAIL"|translate}}</b>: <a href="mailto:{{itemVal.itemEmail}}">{{itemVal.itemEmail}}</a>
+                                </p>
+                            </li>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <br ng-if="IsMobileDevice()">
+            <div ng-if="IsMobileDevice()" class="text-center">
+                <button class="btn btn-success" ng-click="showOnMap()">{{"ITEM.BUTTON"|translate}}</button>
+            </div>
+            <div class="col-md-12">
+                <br>
+                <br>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div> <!-- /.stacked-menu -->

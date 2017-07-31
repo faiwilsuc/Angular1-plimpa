@@ -1,0 +1,123 @@
+<div class="container-fluid nano">
+    <div class="row nano-content postAddContainerFormInsider" id="postAddContainerFormInsider">
+        <form name="postAdd_form" class="postAddContainerFormInsiderCont">
+            <div class="col-md-12">
+                <h3 class="postAddContainerTitle">
+                    {{"POST.REGISTER.NOTE" |translate}}
+                </h3>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label>{{"POST.REGISTER.LBL_USERNAME" |translate}}</label>
+                    <input ng-focus="scrollCenter()" type="text" class="form-control" name="username" ng-change="checkUsername(registerUser.username)" ng-model="registerUser.username" ng-minlength=4 ng-maxlength=45 placeholder="Username" translate translate-attr-placeholder="REGISTER.PLACEHOLDER.USERNAME" ng-pattern="/^[a-zA-Z0-9-_\.]*$/" required>
+                    <input ng-focus="scrollCenter()" type="checkbox" name="userExistance" ng-show="false" ng-model="IsUserNoExist" required>
+                    <div class="error" ng-show="registerUser.username&&!userSearching && IsUserExist">
+                        <small class="error">
+                            {{registerUser.username}} {{"REGISTER.ALERT.USERNAME.TAKEN" |translate}}
+                        </small>
+                    </div>
+                    <div class="alert alert-success" role="alert" ng-show="registerUser.username&&!userSearching && IsUserNoExist">
+                        <a class="alert-link">
+                            {{registerUser.username}} {{"REGISTER.ALERT.USERNAME.AVAILABLE" |translate}}
+                        </a>
+                    </div>
+                    <div class="col-md-12">
+                        <small ng-show="userSearching">
+                          {{"REGISTER.ALERT.USERNAME.SEARCHING" |translate}} {{registerUser.username}}...
+                        </small>
+                    </div>
+                    <div class="error" ng-show="postAdd_form.username.$dirty && postAdd_form.username.$invalid || postAdd_form.username.$error.pattern">
+                        <small class="error" ng-show="postAdd_form.username.$error.required">{{"REGISTER.ERR.USERNAME.REQUIRED" |translate}}</small>
+                        <small class="error" ng-show="postAdd_form.username.$error.minlength">{{"REGISTER.ERR.USERNAME.MIN" |translate}}</small>
+                        <small class="error" ng-show="postAdd_form.username.$error.maxlength">{{"REGISTER.ERR.USERNAME.MAX" |translate}}</small>
+                        <small class="error" ng-show="postAdd_form.username.$error.pattern">{{"REGISTER.ERR.USERNAME.PATTERN" |translate}}</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>{{"POST.REGISTER.LBL_EMAIL" |translate}}</label>
+                    <input ng-focus="scrollCenter()" type="email" class="form-control" name="email" ng-model="registerUser.email" ng-change="checkEmail(registerUser.email)" ng-minlength=4 ng-maxlength=60 validate-email placeholder="Email address" translate translate-attr-placeholder="REGISTER.PLACEHOLDER.EMAIL" ng-pattern="emailValidationPattern" required>
+                    <input ng-focus="scrollCenter()" type="checkbox" name="emailExistance" ng-show="false" ng-model="IsEmailNoExist" required>
+                    <div class="error" ng-show="registerUser.email&&!emailSearching && IsEmailExist">
+                        <small class="error">
+                            {{registerUser.email}} {{"REGISTER.ALERT.EMAIL.TAKEN" |translate}}
+                        </small>
+                    </div>
+                    <div class="alert alert-success" role="alert" ng-show="registerUser.email&&!emailSearching && IsEmailNoExist">
+                        <a class="alert-link">
+                            {{registerUser.email}} {{"REGISTER.ALERT.EMAIL.AVAILABLE" |translate}}
+                        </a>
+                    </div>
+                    <div class="col-md-12">
+                        <small ng-show="emailSearching">
+                          {{"REGISTER.ALERT.EMAIL.SEARCHING" |translate}} {{registerUser.email}}...
+                            </small>
+                    </div>
+                    <div class="error" ng-show="postAdd_form.email.$dirty && postAdd_form.email.$invalid || postAdd_form.email.$error.pattern">
+                        <small class="error" ng-show="postAdd_form.email.$error.required">{{"REGISTER.ERR.EMAIL.REQUIRED" |translate}}</small>
+                        <small class="error" ng-show="postAdd_form.email.$error.minlength">{{"REGISTER.ERR.EMAIL.MIN" |translate}}</small>
+                        <small class="error" ng-show="postAdd_form.email.$error.maxlength">{{"REGISTER.ERR.EMAIL.MAX" |translate}}</small>
+                        <small class="error" ng-show="postAdd_form.email.$error.email || postAdd_form.email.$error.pattern">{{"REGISTER.ERR.EMAIL.PATTERN" |translate}}</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>{{"POST.REGISTER.LBL_PASS" |translate}}</label>
+                    <input ng-focus="scrollCenter()" class="form-control" type="password" name="password" ng-model="registerUser.password" ng-minlength=4 ng-maxlength=20 placeholder="Password" translate translate-attr-placeholder="REGISTER.PLACEHOLDER.PASS" required>
+                    <div class="error" ng-show="postAdd_form.password.$dirty && postAdd_form.password.$invalid">
+                        <small class="error" ng-show="postAdd_form.password.$error.required">{{"REGISTER.ERR.PASS.REQUIRED" |translate}}</small>
+                        <small class="error" ng-show="postAdd_form.password.$error.minlength">{{"REGISTER.ERR.PASS.MIN" |translate}}</small>
+                        <small class="error" ng-show="postAdd_form.password.$error.maxlength">{{"REGISTER.ERR.PASS.MAX" |translate}}</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>{{"POST.REGISTER.LBL_REPASS" |translate}}</label>
+                    <input ng-focus="scrollCenter()" class="form-control" type="password" name="confirm_password" ng-model="registerUser.confirm_password" ng-minlength=4 ng-maxlength=20 placeholder="Confirm Password" translate translate-attr-placeholder="REGISTER.PLACEHOLDER.CONFIRM_PASS" required>
+                    <div class="error" ng-show="postAdd_form.confirm_password.$dirty && postAdd_form.confirm_password.$invalid || postAdd_form.confirm_password_math.$error.required">
+                        <small class="error" ng-show="postAdd_form.confirm_password.$error.required">{{"REGISTER.ERR.PASS.REQUIRED_CONFIRM" |translate}}</small>
+                        <small class="error" ng-show="postAdd_form.confirm_password.$error.minlength">{{"REGISTER.ERR.PASS.MIN" |translate}}</small>
+                        <small class="error" ng-show="postAdd_form.confirm_password.$error.maxlength">{{"REGISTER.ERR.PASS.MAX" |translate}}</small>
+                        <small class="error" ng-show="!postAdd_form.confirm_password.$error.minlength&&!postAdd_form.confirm_password.$error.required&&postAdd_form.confirm_password_math.$error.required">
+                                {{"REGISTER.ERR.PASS.CONFIRM" |translate}}
+                            </small>
+                    </div>
+                </div>
+                <div class="col-md-12 pfWrapper" ng-hide="true">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 pfLeft">
+                            <p>
+                                {{PassIncorrect}}
+                            </p>
+                            <input ng-focus="scrollCenter()" type="checkbox" name="confirm_password_math" ng-model="PassIncorrect" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="col-md-12">
+            <h3 class="postAddContainerTitle">
+              {{"POST.REGISTER.OR" |translate}} <br>
+            </h3>
+        </div>
+        <div class="col-md-12">
+            <div class="col-md-12">
+                <button class="btn signInPost" ui-sref="home.login">{{"POST.REGISTER.SIGNIN" |translate}}</button>
+            </div>
+            <div class="col-md-12">
+                <form action="/api/signin/facebook" method="POST" id="fbLoginForm" target="_self">
+                    <a href="" class="fbLogin fbPostLogin" onclick="document.getElementById('fbLoginForm').submit();">
+                        <i class="fa fa-facebook"></i> Sign in with Facebook
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="postAddContainerFooter">
+    <div class="pfButtons">
+        <div class="pfContinue" ng-click="submitForm()" ui-sref="home.post.social" ng-class="{'pfDisabled': postAdd_form.$invalid || ResponseSuccess}">
+          {{"POST.BTN.SUBMIT_REG"| translate}}
+        </div>
+        <div class="pfPrevious" ui-sref="home.post.social">
+          {{"POST.BTN.BACK"| translate}}
+        </div>
+    </div>
+</div>

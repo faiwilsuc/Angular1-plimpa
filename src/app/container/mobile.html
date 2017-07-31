@@ -1,0 +1,64 @@
+<ul  ng-if="!isPostPage" class="plimpa-tabs nav nav-tabs text-center" role="tablist">
+    <li role="presentation" class="active col-xs-6">
+        <a data-target="#tab_list" aria-controls="tab_list" role="tab" data-toggle="tab">{{"NAVIGATION.MOBILE.TAB.LIST"|translate}}</a>
+    </li>
+    <li role="presentation" class="col-xs-6">
+        <a data-target="#tab_map" aria-controls="tab_map" role="tab" data-toggle="tab">{{"NAVIGATION.MOBILE.TAB.MAP"|translate}}</a>
+    </li>
+</ul>
+<div ng-if="!isPostPage" class="plimpa-tab-content tab-content">
+    <div role="tabpanel" class="plimpa-tab-pane tab-pane active" id="tab_list">
+        <ul class="plimpa-tabs nav nav-tabs text-center" role="tablist">
+            <li role="presentation" class="active col-xs-6">
+                <a data-target="#tab_browser" aria-controls="tab_browser" role="tab" data-toggle="tab">
+                    {{isSearchPage ? "NAVIGATION.MOBILE.TAB.LOCAL" : "NAVIGATION.MOBILE.TAB.BROWSE" |translate}}</a>
+            </li>
+            <li role="presentation" class="col-xs-6">
+                <a data-target="#tab_around" aria-controls="tab_around" role="tab" data-toggle="tab">
+                    {{isSearchPage ? "NAVIGATION.MOBILE.TAB.OTHER" : "NAVIGATION.MOBILE.TAB.AROUND" |translate}}</a>
+            </li>
+        </ul>
+        <div class="plimpa-tab-content tab-content">
+            <div ng-include="'app/navigation/sort_panel.html'"></div>
+            <div role="tabpanel" class="plimpa-tab-pane tab-pane active" id="tab_browser">
+                <div class="container-fluid">
+                    <stacked-menu-container class="row" ng-if="!fullMapLoaded">
+                        <div ng-if="!isSingleStackedMenu" ui-view="categories-menu"
+                             class="catMenu slide-left col-md-3 col-xs-12">
+                        </div>
+                        <div ng-if="isSingleStackedMenu" ui-view="categories-menu"
+                             class="catMenu slide-left col-md-6 col-xs-12">
+                        </div>
+                    </stacked-menu-container>
+                </div>
+            </div>
+            <div role="tabpanel" class="plimpa-tab-pane tab-pane" id="tab_around">
+                <div class="container-fluid">
+                    <stacked-menu-container class="row" ng-if="!fullMapLoaded">
+                        <div ui-view="left-menu-2"
+                             class="catMenu slide-left col-md-3 col-xs-12">
+                        </div>
+                    </stacked-menu-container>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div role="tabpanel" class="plimpa-tab-pane tab-pane" id="tab_map">
+        <div class="container-fluid">
+            <stacked-menu-container class="row" ng-if="!fullMapLoaded">
+                <main-content>
+                    <!--<div ui-view="map-items" class="slide-right"></div>-->
+                    <div ui-view="full-map" id="full-map" class="mainMap col-md-6 col-xs-12"></div>
+                </main-content>
+            </stacked-menu-container>
+        </div>
+    </div>
+</div>
+<div ng-if="isPostPage" class="container-fluid">
+    <div class="row">
+        <div ui-view="categories-menu"
+             class="catMenu slide-left">
+        </div>
+    </div>
+</div>
+

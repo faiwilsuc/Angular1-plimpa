@@ -1,0 +1,66 @@
+// Slider content
+.slideCont {
+    position: relative;
+    width: calc(100% + 30px);
+    margin: 0 0 12px 0;
+    padding: 0;
+    left: -15px;
+}
+
+.publishedTime {
+    display: inline-block;
+    margin: 6px 0 12px;
+    i,
+    span {
+        line-height: 22px;
+        float: left;
+        margin-right: 12px;
+        font-size: 16px;
+    }
+    i {
+        font-size: 18px;
+    }
+}
+
+.tab-content > .active {
+    display: block;
+    padding: 18px 0 24px;
+}
+
+.tabInfoList {
+    list-style: none;
+    padding: 12px;
+}
+
+.itemSingleImg {
+    min-height: 150px;
+    display: inline-block;
+    margin-bottom: -5px;
+    &.itemSingleImgDefault {
+        width: 100%;
+    }
+    img {
+        margin: 0 auto;
+        display: block;
+        min-width: 150px;
+        max-height: 40vh;
+    }
+}
+
+.extImgBlock {
+  text-align: center;
+}
+
+.modalImg {
+  max-height: 50% !important;
+}
+
+.fa-external-link {
+  margin-right: 5px;
+}
+
+@media (max-width: $mobile-width) {
+  .itemSingleImg img {
+    max-height: 300px;
+  }
+}

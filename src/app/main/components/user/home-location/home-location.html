@@ -1,0 +1,91 @@
+<div class="userAccountBefore" ui-sref="home"></div>
+<div class="userAccount">
+    <div class="userAccountHeader">
+        {{"PROFILE.HEADER.LOCATION" | translate}}
+        <i class="material-icons" ui-sref="home">close</i>
+        <a href="" ng-click="logOut()">{{"PROFILE.HEADER.LOGOUT" | translate}}</a>
+    </div>
+    <ul class="userAccountListing">
+        <li><a ui-sref="home.my_account">{{"PROFILE.BTN.NAV_PROFILE" | translate}}</a></li>
+        <li class="active"><a ui-sref="home.home_location">{{"PROFILE.BTN.NAV_LOCATION" | translate}}</a></li>
+        <li><a ui-sref="home.my_ads">{{"PROFILE.BTN.NAV_ADS" | translate}}</a></li>
+    </ul>
+    <div class="userAccountForm">
+        <div class="container-fluid nano">
+            <div class="row nano-content userAccountFormInsider">
+                <div class="col-md-12">
+                    <h2 class="userAccountTitle" style="margin-top: 2px;">{{"PROFILE.LOCATION.UPDATE_CALL" | translate}}
+                                <span>{{"PROFILE.LOCATION.LAST_UPD" | translate}} {{user.datetime_condo_changed | datefromNow}}</span>
+                            </h2>
+                </div>
+                <div class="col-md-12 align-center">
+                    <h4>
+                                <i>
+                                  {{"PROFILE.LOCATION.ADDR_CURRENT" | translate}} {{oldLocation.title}} <div ng-show="oldLocation.title_en"> | eng: {{oldLocation.title_en}} </div>
+                                </i>
+                            </h4>
+                </div>
+                <div class="col-md-12">
+                    <hr>
+                </div>
+                <div ng-if="!toggledMap && !addingCondoFromMap">
+                    <div class="col-md-12">
+                        <button class="btnUpdateHome" ng-show="(((user.datetime_condo_changed | dateFormat: 'YYYYDDD') + 3) <= todayDate) && !toggledMap" ng-click="toggleUpdateMap()">
+                          {{"PROFILE.BTN.CHANGE_LOCATION" | translate}}
+                        </button>
+                        <p class="align-center">
+                          {{"PROFILE.LOCATION.INFO_1" | translate}}
+                            <br> {{"PROFILE.LOCATION.INFO_2" | translate}}
+                        </p>
+                    </div>
+                </div>
+                <div ng-if="newLocation.id && toggledMap || addingCondoFromMap" class="toggledMapSection">
+                    <div class="col-md-6 col-sm-6 col-xs-6 userChoosedLocation userChoosedLocationTemp align-center">
+                        <h4 ng-show="!addingCondoFromMap">
+                               {{"PROFILE.LOCATION.NEW_LOCAITON" | translate}} <br> <br>
+                                <i>
+                                  <div ng-if="newLocation.title_en">{{ newLocation.title_en }}</div>
+                                  <div ng-if="!newLocation.title_en">{{ newLocation.title }}</div>
+                                  <strong class="align-center">@</strong>
+                                  <div ng-if="newLocation.address">{{ newLocation.address }}</div>
+                                  <div ng-if="!newLocation.address">{{ newLocation.city }}</div>
+                                </i>
+                            </h4>
+                        <h4 ng-show="addingCondoFromMap">
+                          {{"PROFILE.LOCATION.NEW_LOCAITON" | translate}} <br> <br>
+                                <i>
+                                  <div>{{newLocationTitle}}</div>
+                                </i>
+                            </h4>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6 userChoosedLocation userChoosedLocationTemp align-center">
+                        <button class="btnUpdateHome" ng-show="(((user.datetime_condo_changed | dateFormat: 'YYYYDDD') + 3) <= todayDate) && toggledMap" ng-click="toggleUpdateMap();savePlaceUser()">
+                          {{"PROFILE.LOCATION.CONFIRM_CHANGE" | translate}}
+                        </button>
+                        <button class="btnUpdateHome" ng-show="addingCondoFromMap" ng-click="savePlaceUser()">
+                          {{"PROFILE.LOCATION.CONFIRM_CHANGE" | translate}}
+                        </button>
+                        <button class="btnUpdateHome" ng-click="cancelUpdateMap()">
+                          {{"PROFILE.BTN.CANCEL" | translate}}
+                        </button>
+                        <p class="align-center">
+                          {{"PROFILE.LOCATION.INFO_1" | translate}}
+                            <br> {{"PROFILE.LOCATION.INFO_2" | translate}}
+                        </p>
+                    </div>
+                </div>
+                <div ng-if="toggledMap">
+                    <form>
+                        <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 updatingUserPlace">
+                            <input type="search" id="searchmap_keyword" class="navZip" placeholder="Search Location" translate translate-attr-placeholder="PROFILE.PLACEHOLDER.SEARCH_LOCATION">
+                            <button><i class="material-icons">place</i></button>
+                        </div>
+                    </form>
+                    <div class="col-md-12">
+                        <div id="userMapChoose"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

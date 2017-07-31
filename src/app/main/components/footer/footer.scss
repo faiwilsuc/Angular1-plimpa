@@ -1,0 +1,66 @@
+.homePageFooter {
+    width: 100%;
+    min-height: 100px;
+    position: relative;
+    display: block;
+    background-color: #f5f5f5;
+    border-top: 1px solid #eee;
+    color: rgba(#212121, .8);
+    margin-top: 0;
+    font-size: 14px;
+    padding: 32px 32px;
+    .footerLogo {
+        width: 120px;
+        height: 40px;
+        display: inline-block;
+        position: relative;
+        background-image: url(../../assets/img/logo3.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-right: 18px;
+        float: left;
+    }
+    .footerSocials {
+        min-width: 120px;
+        height: 40px;
+        position: relative;
+        display: block;
+        float: right;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        li {
+            float: right;
+            width: 25px;
+            height: 40px;
+            position: relative;
+            text-align: center;
+            padding: 0;
+            line-height: 40px;
+        }
+    }
+    .footerSiteMenu {
+        width: auto;
+        position: relative;
+        display: inline-block;
+        margin: 0;
+        list-style: none;
+        padding: 0;
+        li {
+            float: left;
+            position: relative;
+            color: rgba(#212121, .8);
+            font-size: 14px;
+            line-height: 20px;
+            margin-right: 12px;
+            a {
+                color: rgba(#212121, .8);
+                text-decoration: none;
+                &:hover {
+                    color: rgba(#d32f2f, 1);
+                }
+            }
+        }
+    }
+}

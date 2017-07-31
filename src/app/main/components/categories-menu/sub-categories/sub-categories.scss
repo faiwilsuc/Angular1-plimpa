@@ -1,0 +1,95 @@
+    .subCategories {
+        .subCategoriesCont {
+            margin: 8px auto;
+            padding: 6px;
+            background-color: #ffffff;
+            width: calc(100% - 32px);
+            position: relative;
+            display: block;
+            float: none;
+            box-shadow: 1px 3px 8px #eee;
+            border-radius: 4px;
+            outline: none;
+            transition: all ease .26s;
+            .subCategoriesContInside {
+                outline: none;
+                padding-left: 0;
+                .subTimestamp {
+                    margin: 0 0 6px;
+                    color: #757575;
+                    font-weight: 600;
+                    font-size: 12px;
+                }
+                h4 {
+                    font-family: "roboto";
+                    font-weight: 600;
+                    color: #757575;
+                    font-size: 16px;
+                    margin-top: 4px;
+                    letter-spacing: .26px;
+                }
+                p {
+                    margin: 0;
+                    color: #757575;
+                    font-size: 13px;
+                    font-style: italic;
+                }
+            }
+            &.activeSub,
+            &.focus,
+            &:focus {
+                outline: none;
+                background-color: #fafafa;
+                h4 {
+                    color: #4caf50;
+                }
+            }
+            &:hover {
+                box-shadow: 1px 8px 14px rgba(158, 158, 158, 0.47);
+                z-index: 11;
+            }
+            .subCategoriesContImg {
+                text-align: center;
+                padding: 12px 0px;
+                i {
+                    font-size: 56px;
+                    color: #000000;
+                }
+                img {
+                    width: 55px;
+                    height: 55px;
+                    border-radius: 50%;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    
+    .openedElmDatasLoadingClass {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 121;
+        top: 0;
+        left: 0;
+    }
+    
+    .loadMoreSubList {
+        padding: 6px;
+        background-color: #f44336;
+        text-align: center;
+        border-radius: 32px;
+        color: rgba(255, 255, 255, 0.91);
+        font-size: 16px;
+        margin: 12px;
+        box-shadow: 0px 3px 6px rgba(244, 67, 54, 0.38);
+    }
+    
+    .magnificImg {
+        box-shadow: none;
+        outline: none;
+        &:focus {
+            box-shadow: none;
+            outline: none;
+        }
+    }

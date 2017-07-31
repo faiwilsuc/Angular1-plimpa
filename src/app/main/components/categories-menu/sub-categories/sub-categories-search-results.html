@@ -1,0 +1,47 @@
+<div stacked-menu-compat class="stacked-menu opened"><!-- FIXME remove -->
+  <div class="header">
+    <menu-header ng-click="menuCtrl.toggle()">
+      <a href="" ng-click="goBackSubList()">{{"NAVIGATION.BTN.BACK"|translate}}</a>
+    </menu-header>
+  </div>
+
+<div class="categoriesMenu nano" ng-class="{'categoriesMenuToggled': true}">
+    <div class="nano-content">
+        <div class="subCategories container-fluid">
+            <div class="row">
+                <div ng-show="openedElmDatas == ''" class="col-md-12">
+                    <h4>{{"NAVIGATION.PLACEHOLDER_EMPTY"|translate}}</h4>
+                    <div class="col-md-2 col-md-offset-5 text-center" ng-if="IsMobileDevice()">
+                        <button type="button" ng-click="showOtherPlatformsMobile()" class="btn btn-bg btn-success"><i class="material-icons" aria-hidden="true">search</i>{{"NAVIGATION.MOBILE.BTN.OTHER_PLATFORMS"|translate}}</button>
+                    </div>
+                </div>
+                <div class="col-md-12 openedElmDatasLoadingClass" ng-if="!openedElmDatasLoading">
+                    <div class="spinner"></div>
+                </div>
+                <div class="col-md-12 subCategoriesCont slide-top" ng-repeat="elm in openedElmDatas |limitTo: limitSubData | orderBy: subItemOrder.val:subItemOrder.reverse" ng-class="{'activeSub': $index == subItem || nTrim == elm.itemTitle}" ng-show="openedElmDatas != ''">
+                    <div class="row subCategoriesContImgCont">
+                        <div class="col-md-3 col-sm-3 col-xs-3 subCategoriesContImg">
+                            <i ng-show="elm.itemImages | isEmpty" class="material-icons">photo</i>
+                            <a class="magnificImg" ng-repeat="el in elm.itemImages track by $index" ng-click="showInMap(elm, $index)" ng-show="$index == 0">
+                                <!-- <a class="magnificImg" ng-repeat="el in elm.itemImages track by $index" href="{{getImageThumUrls(elm.condoId, elm.itemId, el)}}" ng-click="showIWElm(elm)" ng-show="$index == 0"> -->
+                                <img preload-image ng-src="{{getImageThumUrls(elm.condoId, elm.itemId, el)}}" alt="{{el}}" default-image="../../assets/img/loader.gif" fallback-image="../../assets/img/no-image.png">
+                            </a>
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-xs-9 subCategoriesContInside" ui-sref="home.item.search.modal-info({ itemNameSlug: ( elm.itemTitle | slugify ), obj: elm })" >
+                            <h4>{{elm.itemTitle}}</h4>
+                            <!-- <h5>{{elm.owner}}</h5> -->
+                            <div class="subTimestamp">{{elm.timestamp | dateFormat:'D/M/YYYY'}}</div>
+                            <p>฿ {{elm.itemPrice}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="loadMoreSubList" ng-click="loadMoreSub(10)" ng-if="limitSubData <= openedElmDatas.length">
+                        {{openedElmDatas.length - limitSubData}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

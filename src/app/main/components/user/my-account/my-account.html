@@ -1,0 +1,50 @@
+<div class="userAccountBefore" ui-sref="home"></div>
+<div class="slide-top userAccount">
+    <form name="addItem_form">
+        <div class="userAccountHeader">{{"PROFILE.HEADER.MAIN" | translate}}
+          <i class="material-icons" ui-sref="home">close</i>
+          <a href="" ng-click="logOut()">{{"PROFILE.HEADER.LOGOUT" | translate}}</a>
+          <!-- <i ng-click="logOut()">Logout</i> -->
+        </div>
+        <ul class="userAccountListing">
+          <li class="active"><a ui-sref="home.my_account">{{"PROFILE.BTN.NAV_PROFILE" | translate}}</a></li>
+          <li><a ui-sref="home.home_location">{{"PROFILE.BTN.NAV_LOCATION" | translate}}</a></li>
+          <li><a ui-sref="home.my_ads">{{"PROFILE.BTN.NAV_ADS" | translate}}</a></li>
+        </ul>
+        <div class="userAccountForm">
+            <div class="container-fluid nano">
+                <div class="row nano-content userAccountFormInsider">
+                    <div class="col-md-12 userProfile">
+                        <img ng-src="{{user.img_url}}" ng-if="user.img_url">
+                        <img gravatar-src="user.email" gravatar-size="100" gravatar-default='monsterid' ng-if="!user.img_url">
+                        <h3>{{user.display_name || user.username}}</h3>
+                    </div>
+                    <div class="col-md-12">
+                        <!-- <h3 class="userAccountTitle">Update My Profile</h3> -->
+                    </div>
+                    <form>
+                        <!--DISABLED BECAUSE CONFUSING THE USERS registered by social login-->
+
+                        <!--<div class="col-md-6 col-md-offset-3">-->
+                            <!--<div class="form-group">-->
+                                <!--<input ng-model="user.username" type="text" class="form-control" placeholder="Username" translate translate-attr-placeholder="PROFILE.PLACEHOLDER.USERNAME">-->
+                            <!--</div>-->
+                            <!--<div class="form-group">-->
+                                <!--<input type="email" class="form-control" ng-model="user.email" placeholder="Email" translate translate-attr-placeholder="PROFILE.PLACEHOLDER.EMAIL">-->
+                            <!--</div>-->
+                            <!--<div class="form-group">-->
+                                <!--<input type="password" class="form-control" placeholder="Password" translate translate-attr-placeholder="PROFILE.PLACEHOLDER.PASSWORD">-->
+                            <!--</div>-->
+                            <!--<div class="form-group">-->
+                                <!--<input type="password" class="form-control" placeholder="Re Password" translate translate-attr-placeholder="PROFILE.PLACEHOLDER.RE-PASSWORD">-->
+                            <!--</div>-->
+                            <!--<div class="form-group">-->
+                                <!--<button type="submit" class="btn btn-default btn-full">{{"PROFILE.BTN.UPDATE_PROFILE"|translate}}</button>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

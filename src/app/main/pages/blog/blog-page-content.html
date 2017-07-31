@@ -1,0 +1,36 @@
+<section class="blog-section" id="topBlog">
+    <div class="blogLoading toggle" ng-if="(post | isEmpty)">
+        <div class="spinner"></div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-9 center-block">
+                <div class="post-preview">
+                    <a href="" ui-sref="blog" class="goBack"><i class="fa fa-arrow-left" aria-hidden="true"></i> {{"NAVIGATION.BTN.BACK"|translate}}</a>
+                    <a href="">
+                        <h2 class="post-title">
+                          {{post.title}}
+                        </h2>
+                    </a>
+                    <div class="post-content" ng-bind-html="post.text"></div>
+
+                    <p class="post-meta"><i class="fa fa-user" aria-hidden="true"></i> <a href="#">{{post.author}}</a> <i class="fa fa-clock-o" aria-hidden="true"></i> {{post.created_date | dateFormat:'D/MM/YYYY'}}</p>
+                    <!-- <p class="post-content">
+                    </p> -->
+                </div>
+            </div>
+        </div>
+      <div class="row text-center">
+        <div class="col-xs-6 blog-footer-text"> <div class="pull-right">{{'BLOG.FOOTER.TEXT'|translate}}</div></div>
+        <div class="col-xs-6">
+          <div class="pull-left">
+            <button ui-sref="home" class="btn btn-md blog-footer-button">
+              {{'BLOG.FOOTER.BTN_BUY' | translate}}
+            </button>
+            <button ui-sref="home.post" class="btn btn-md blog-footer-button">
+              {{'BLOG.FOOTER.BTN_SELL' | translate}}
+            </button>
+          </div>
+        </div>
+      </div>
+</section>

@@ -1,0 +1,31 @@
+.plimpa-tabs.nav-tabs {
+  li {
+    font-family: "roboto";
+    line-height: 4rem;
+    font-size: 18px;
+    padding-left: 0;
+    padding-right: 0;
+    a {
+      background-color: #ffffff;
+      color: #96979d;
+      border: none;
+      border-bottom: 4px transparent solid;
+      margin: 0;
+    }
+    &.active {
+      a {
+        color: #212121;
+        background-color: #ffffff;
+        border: none;
+        border-bottom: 4px #f44336 solid;
+      }
+    }
+  }
+}
+
+.plimpa-tab-content.tab-content {
+  padding: 0px 0 0;
+  .plimpa-tab-pane {
+    padding: 0;
+  }
+}

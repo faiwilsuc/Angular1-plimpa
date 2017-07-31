@@ -1,0 +1,28 @@
+<div class="col-md-12" ng-if="(user | isEmpty) && AddItem.location.condo_address_iw">
+  <button type="button" class="postAddContainerButton" ng-click="markCondo()">{{"POST.LOCATION.CONFIRM.CHANGE_LOCATION_NOAUTH"|translate}}</button>
+</div>
+<div class="markerMapPos">
+
+  <div class="col-md-12 pfWrapper pfMapSelected" ng-if="!(user | isEmpty)">
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <i class="material-icons chosenMapIcon">beenhere</i>
+      </div>
+      <div class="col-md-12 col-sm-12 pfLeft">
+        <label>{{"POST.LOCATION.CONFIRM.YOUR_LOCATION"| translate}}</label>
+      </div>
+      <div class="col-md-12 col-sm-12 pfRight">
+        <p><strong>{{AddItem.location.title}}</strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-12" ng-if="!(user | isEmpty)">
+  <h3 class="postAddContainerTitle">
+    <div translate="{{'POST.LOCATION.CONFIRM.CHANGE_LOCATION'}}"></div>
+  </h3>
+  <button class="postAddContainerButton" ui-sref="home.home_location">{{"POST.LOCATION.CONFIRM.SETTINGS"| translate}}</button>
+  <br>
+  <br>
+</div>

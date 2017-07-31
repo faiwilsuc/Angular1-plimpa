@@ -1,0 +1,68 @@
+<div class="userAccountBefore" ui-sref="home"></div>
+<div class="slide-top userAccount">
+    <div class="userAccountHeader">
+        {{"PROFILE.HEADER.ADS" | translate}}
+        <i class="material-icons" ui-sref="home">close</i>
+        <a href="" ng-click="logOut()">{{"PROFILE.HEADER.LOGOUT" | translate}}</a>
+    </div>
+    <ul class="userAccountListing">
+        <li><a ui-sref="home.my_account">{{"PROFILE.BTN.NAV_PROFILE" | translate}}</a></li>
+        <li><a ui-sref="home.home_location">{{"PROFILE.BTN.NAV_LOCATION" | translate}}</a></li>
+        <li class="active"><a ui-sref="home.my_adds">{{"PROFILE.BTN.NAV_ADS" | translate}}</a></li>
+    </ul>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 userTableList">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>{{"PROFILE.ADS.FILTER.IMAGE"|translate}}</th>
+                            <th>{{"PROFILE.ADS.FILTER.NAME"|translate}}</th>
+                            <th ng-if="!IsMobileDevice()">{{"PROFILE.ADS.FILTER.DATE"|translate}}</th>
+                            <th ng-if="!IsMobileDevice()">{{"PROFILE.ADS.FILTER.PRICE"|translate}}</th>
+                            <th ng-if="!IsMobileDevice()">{{"PROFILE.ADS.STATUS"|translate}}</th>
+                            <th>{{"PROFILE.ADS.ACTION"|translate}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-if="UserAds.length == 0">
+                            <td class="itemName">{{"PROFILE.ADS.EMPTY_PLACEHOLDER"|translate}}</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr ng-repeat="el in UserAds" ng-if="UserAds.length > 0">
+                            <td>
+                                <div ng-if="el.itemImages | isEmpty">
+                                    <a class="magnificImg">
+                                        <img class="itemImgSrc" ng-src="../../assets/img/no-image.png">
+                                    </a>
+                                </div>
+                                <div ng-if="el.state == 0">
+                                    <a class="magnificImg" ng-repeat="e in el.itemImages track by $index" href="{{getImagePendingThumUrls(el.itemId, e)}}" ng-show="$index == 0">
+                                        <img class="itemImgSrc" preload-image ng-src="{{getImagePendingThumUrls(el.itemId, e)}}" alt="{{e}}" default-image="../../assets/img/loader.gif" fallback-image="">
+                                    </a>
+                                </div>
+                                <div ng-if="el.state == 1">
+                                    <a class="magnificImg" ng-repeat="e in el.itemImages track by $index" href="{{getImageThumUrls(el.condoId, el.itemId, e)}}" ng-show="$index == 0">
+                                        <img class="itemImgSrc" preload-image ng-src="{{getImageThumUrls(el.condoId, el.itemId, e)}}" alt="{{e}}" default-image="../../assets/img/loader.gif" fallback-image="">
+                                    </a>
+                                </div>
+                            </td>
+                            <td class="itemName">{{el.itemTitle}}</td>
+                            <td ng-if="!IsMobileDevice()">{{el.timestampHuman}}</td>
+                            <td ng-if="!IsMobileDevice()">{{el.itemPrice}} THB</td>
+                            <td ng-if="!IsMobileDevice()">{{el.state == 0? 'Pending':'Active'}}</td>
+                            <td class="actions">
+                                <i class="material-icons" ui-sref="home.item.info({ itemId: el.itemId, itemNameSlug: ( el.itemTitle | slugify ) })" ng-if="el.state == 1">remove_red_eye</i>
+                                <i class="material-icons">mode_edit</i>
+                                <i class="material-icons" ng-click="deleteItem(el)">delete</i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

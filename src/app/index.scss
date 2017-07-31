@@ -1,0 +1,322 @@
+@import "core/stylesheets/variables";
+
+/**
+ *  If you want to override some bootstrap variables, you have to change values here.
+ *  The list of variables are listed here bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss
+ */
+
+$navbar-inverse-link-color: #5AADBB;
+$icon-font-path: "../../bootstrap-sass/assets/fonts/bootstrap/";
+
+/**
+ *  Do not remove the comments below. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+
+// bower:scss
+// endbower
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.flex {
+    -webkit-box-flex: 1;
+    box-sizing: border-box;
+    -webkit-flex: 1;
+    flex: 1;
+}
+
+:after,
+:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/* Mozilla based browsers */
+
+::-moz-selection {
+    background-color: $light-red;
+    color: #fafafa;
+}
+
+
+/* Works in Safari */
+
+::selection {
+    background-color: $light-red;
+    color: #fafafa;
+}
+
+// Cluster hover
+.cluster {
+    div {
+        // font-size: 13px !important;
+        // font-family: "roboto" !important;
+        // font-weight: 600 !important;
+        // top: 1px !important;
+        &:after {
+            // content: "";
+            // position: absolute;
+            // top: calc(50%);
+            // left: 0;
+            // right: 0;
+            // width: 22px;
+            // height: 22px;
+            // background-color: $light-red;
+            // margin: 0 auto;
+            // -webkit-transform: translateY(-50%);
+            // transform: translateY(-50%);
+            // border-radius: 50%;
+            // display: block;
+            // z-index: -1;
+        }
+    }
+    img {
+        transition: all ease-out .12s;
+        // opacity: .1;
+    }
+}
+
+.cluster:hover {
+    // z-index: 99;
+    img {
+        transform: scale(1.2);
+        padding: 0;
+        opacity: 1;
+    }
+    div {
+        // color: #ffffff !important;
+    }
+}
+
+//
+.no-wrap,
+.no-padding {
+    padding: 0 !important;
+}
+
+html {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+[du-scroll-container] {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.alert {
+    padding: 0px;
+    margin: 2px 0 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+// Main Loading
+.mainLoad {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1120px;
+    font-size: 72px;
+    z-index: 9999;
+    // background-color: $light-red;
+    color: $light-red;
+    text-align: center;
+    /* line-height: 8; */
+    font-family: "roboto";
+    display: inline-block;
+    padding-top: 15%;
+    // -webkit-box-pack: center;
+    // -ms-flex-pack: center;
+    // justify-content: center;
+    // -webkit-box-align: center;
+    // -ms-flex-align: center;
+    // align-items: center;
+}
+
+//this is fix for google map
+.tab-content > .tab-pane {
+  display: block;
+  height:0;
+  overflow:hidden;
+}
+.tab-content > .active {
+  display: block;
+  height:auto;
+}
+
+//
+
+/* ------------------------------------------- */
+
+
+/* Slide Left
+/* ------------------------------------------- */
+
+
+/* line 217, ../sass/ng-animation.scss */
+
+.slide-left {
+    -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* easeOutQuad */
+    -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* easeOutQuad */
+}
+
+
+/* line 219, ../sass/ng-animation.scss */
+
+.slide-left.ng-enter {
+    transform: translateX(-60px);
+    -ms-transform: translateX(-60px);
+    -webkit-transform: translateX(-60px);
+    transition-duration: 250ms;
+    -webkit-transition-duration: 250ms;
+    opacity: 0;
+}
+
+
+/* line 225, ../sass/ng-animation.scss */
+
+.slide-left.ng-enter-active {
+    transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    opacity: 1;
+}
+
+
+/* line 230, ../sass/ng-animation.scss */
+
+.slide-left.ng-leave {
+    transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transition-duration: 0ms;
+    -webkit-transition-duration: 0ms;
+    opacity: 1;
+}
+
+
+/* line 236, ../sass/ng-animation.scss */
+
+.slide-left.ng-leave-active {
+    // transform: translateX(-60px);
+    // -ms-transform: translateX(-60px);
+    // -webkit-transform: translateX(-60px);
+    opacity: 0;
+}
+
+
+/* line 242, ../sass/ng-animation.scss */
+
+.slide-left.ng-hide-add {
+    transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transition-duration: 0;
+    -webkit-transition-duration: 0;
+    opacity: 1;
+}
+
+
+/* line 247, ../sass/ng-animation.scss */
+
+.slide-left.ng-hide-add.ng-hide-add-active {
+    // transform: translateX(-60px);
+    // -ms-transform: translateX(-60px);
+    // -webkit-transform: translateX(-60px);
+    opacity: 0;
+}
+
+
+/* line 253, ../sass/ng-animation.scss */
+
+.slide-left.ng-hide-remove {
+    // transform: translateX(-60px);
+    // -ms-transform: translateX(-60px);
+    // -webkit-transform: translateX(-60px);
+    // transition-duration: 250ms;
+    // -webkit-transition-duration: 250ms;
+    display: block !important;
+    opacity: 0;
+}
+
+
+/* line 259, ../sass/ng-animation.scss */
+
+.slide-left.ng-hide-remove.ng-hide-remove-active {
+    transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    opacity: 1;
+}
+
+.nano > .nano-pane {
+    width: 5px !important;
+    // right: 5px !important;
+    background-color: rgba(#000, .23) !important;
+}
+
+.nano > .nano-pane > .nano-slider {
+    background: rgba(#e53935, 1) !important;
+    margin: 0 !important;
+}
+
+.body {
+  overflow-x: auto;
+}
+
+.tour-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/**
+ *  Do not remove the comments below. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+
+// injector
+// endinjector

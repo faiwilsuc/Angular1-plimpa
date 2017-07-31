@@ -1,0 +1,78 @@
+.socialListsCont {
+    margin-bottom: 50px;
+    .socialLists {
+        margin: 0 auto;
+        position: relative;
+        display: block;
+        width: 80%;
+        height: 85px;
+        float: none;
+        padding: 0;
+        padding-top: 16px;
+        img {
+            padding: 0;
+            margin: 0;
+            float: left;
+            min-width: 52px !important;
+            min-height: 52px !important;
+            max-width: 52px !important;
+            max-height: 52px !important;
+            border-radius: 50%;
+        }
+        label {
+            width: 180px;
+            float: right;
+            font-size: 18px;
+            height: 40px;
+            padding-top: 12px;
+            font-family: "roboto";
+            text-transform: uppercase;
+            input {
+                width: 20px;
+                height: 20px;
+                position: relative;
+                float: right;
+            }
+            input {
+                position: relative;
+                cursor: pointer;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    z-index: 1;
+                    width: 20px;
+                    height: 20px;
+                    // border: 2px solid #f2f2f2; 
+                }
+                &:checked {
+                    &:before {
+                        content: "✔";
+                        height: 100%;
+                        position: absolute;
+                        top: 0px;
+                        width: 19px;
+                        left: 2px;
+                        line-height: 20px;
+                        text-align: center;
+                        font-size: 22px;
+                        color: #e53935;
+                    }
+                }
+                &:after {
+                    border: 3px solid #9E9E9E;
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    width: 24px;
+                    height: 24px;
+                    background: #f5f5f5;
+                    cursor: pointer;
+                    outline: none;
+                    top: -2px;
+                }
+                outline: none;
+            }
+        }
+    }
+}

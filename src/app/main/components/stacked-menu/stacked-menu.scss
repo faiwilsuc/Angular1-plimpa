@@ -1,0 +1,309 @@
+$menu-height: 100vh - #{$total-nav-height};
+$header-height: 6rem;
+
+$item-min-height: 6.5rem;
+$item-pad-tb: 1rem;
+$item-pad-lr: 1.5rem;
+
+$stack-breakpoint: $screen-md;
+
+$canon-shadow: 0 -1px 16px -1px $dark-light;
+
+// NOTE: if you change this you must change the wait time in the
+//       stackedMenu controller 'toggle' method
+$transition-time: 0.4s;
+$transition-ease: ease-out;
+
+/* @mnzaki TODO
+ * - stacking functionality
+ * - max-width to not get too big on big screens
+ */
+@mixin veryPlain {
+  -webkit-appearance: none;
+  outline: none;
+  text-decoration: none;
+}
+
+stacked-menu-container {
+  display: block;
+  position: relative;
+  margin: 0;
+
+  [ui-view] {
+    padding: 0;
+  }
+
+  ng-transclude {
+    z-index: 21;
+    box-shadow: $canon-shadow;
+    transition: box-shadow $transition-time $transition-ease;
+  }
+}
+
+.stacked-menu,
+stacked-menu {
+  display: block;
+  width: 100%;
+
+  // @mnzaki NOTE IE 11+ because vh, and 1px because nano bugs
+  height: calc(#{$menu-height} + 1px);
+
+  position: relative;
+  background-color: #f5f5f5;
+  z-index: 2;
+  overflow: hidden;
+  font-family: "roboto";
+
+  transition: box-shadow $transition-time $transition-ease, width 1s $transition-ease;
+
+  .stackedOnly,
+  &.headerWhenStacked .header {
+    display: none !important;
+  }
+
+  .header {
+    menu-header {
+      width: 100%;
+      height: $header-height;
+
+      display: block;
+      background-color: #ffffff;
+      line-height: $header-height;
+      text-align: left;
+      border-right: 1px solid #eee;
+      color: $light-red;
+      text-transform: capitalize;
+      font-size: 16px;
+      padding: 0 16px;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+      z-index: 11;
+      box-shadow: $canon-shadow;
+
+      &:focus,
+      &:hover {
+        @include veryPlain;
+        color: $light-red;
+      }
+    }
+  }
+
+  .nano {
+    background-color: $light;
+
+    & > .nano-pane {
+      width: 3px;
+      background: transparent;
+    }
+    & > .nano-pane > .nano-slider {
+      background: $dark-light;
+      margin: 0;
+    }
+  }
+
+  .spinner {
+    position: absolute;
+  }
+
+  /*
+   * @mnzaki TODO use breakpoint mixins
+   */
+  @media (max-width: $stack-breakpoint) {
+    transition: height $transition-time $transition-ease;
+    height: auto;
+    min-height: calc(100vh - 334px);
+    .nano > .nano-content {
+      position: relative;
+    }
+  }
+}
+
+stacked-menu,
+stacked-menu.itemsFlat {
+  ul {
+    min-height: $item-min-height;
+    position: relative; display: block;
+
+    li {
+      width: 100%;
+      display: inline-block;
+      min-height: $item-min-height;
+
+      &.activeItem {
+        position: relative;
+        padding-bottom: 0;
+        margin-bottom: 10px;
+      }
+
+      &:hover,
+      a:hover,
+      a:active,
+      a:focus
+      {
+        @include veryPlain;
+        color: $light-dark;
+      }
+
+      [level] {
+        @include veryPlain;
+        cursor: pointer;
+        padding: $item-pad-tb $item-pad-lr;
+
+        &:hover {
+          background-color: #f5f5f5;
+        }
+      }
+
+      .itemIcon {
+        @include veryPlain;
+
+        width: 4rem; height: 4rem;
+        line-height: 4rem;
+        position: relative;
+        float: left;
+        display: block;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        text-align: center;
+      }
+      a {
+        color: #757575;
+        line-height: 4rem;
+        padding: 0 3rem;
+        font-size: 18px;
+        position: relative;
+        display: inline-block;
+        width: calc(100% - 45px);
+      }
+      .badge {
+        position: absolute;
+        background-color: $light-red;
+        top: 0.9em; right: 0;
+        color: $light;
+        font-size: 75%;
+        line-height: 100%;
+
+        &.spinner {
+          display: block !important;
+          font-size: 0;
+          background-color: transparent;
+          min-height: 100%;
+
+          &:before {
+            height: 20px;
+            width: 20px;
+          }
+        }
+      }
+
+      ul {
+        background-color: darken($light, 2%);
+        border-top: 1px solid #e0e0e0;
+
+        .badge {
+          background-color: $dark-light;
+        }
+
+        li {
+          min-height: 4.5rem;
+
+          a {
+            color: #757575;
+            font-size: $body-font-size;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}
+
+stacked-menu.expanded {
+  width: 180%;
+}
+
+stacked-menu.itemsCards [level],
+[level].itemCard {
+  min-height: 9.5rem;
+  margin: 8px auto;
+  padding: 6px;
+  background-color: #ffffff;
+  width: calc(100% - 16px);
+  position: relative;
+  display: block;
+  float: none;
+  box-shadow: 1px 3px 8px #eee;
+  border-radius: 4px;
+  outline: none;
+  transition: all ease .26s;
+
+  &.activeItem,
+  &.focus,
+  &:focus {
+    outline: none;
+    background-color: #fafafa;
+    h4 {
+      color: #4caf50;
+    }
+  }
+  &:hover {
+    box-shadow: 1px 8px 14px rgba(158, 158, 158, 0.47);
+    z-index: 11;
+  }
+
+  .itemImage {
+    text-align: center;
+    padding: 0;
+    float: left;
+
+    i {
+      font-size: 56px;
+      color: #000000;
+    }
+    .magnificImg {
+      box-shadow: none;
+      outline: none;
+      width: 100%;
+      padding: 10px;
+      &:focus {
+        box-shadow: none;
+        outline: none;
+      }
+    }
+    img {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+  }
+
+  .itemDetail {
+    outline: none;
+    padding-left: 7rem;
+    .subTimestamp {
+      margin: 0 0 6px;
+      color: #757575;
+      font-size: 12px;
+    }
+    h4 {
+      font-family: "roboto";
+      font-weight: 600;
+      color: #757575;
+      font-size: 16px;
+      margin-top: 4px;
+      letter-spacing: .26px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    p {
+      margin: 0;
+      color: #757575;
+      font-size: 13px;
+      font-style: italic;
+    }
+  }
+}

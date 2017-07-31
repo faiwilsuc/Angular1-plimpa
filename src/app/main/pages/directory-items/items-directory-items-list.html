@@ -1,0 +1,19 @@
+<div class="subCategories container-fluid">
+      <div class="row">
+        <div class="col-md-12 subCategoriesCont slide-top" ng-repeat="elm in itemsList |limitTo: limitSubData">
+          <div class="row subCategoriesContImgCont">
+            <a class="col-md-9 col-sm-9 col-xs-9 subCategoriesContInside" ui-sref="home.item.info({ itemId: elm.itemId, itemNameSlug: ( elm.itemTitle | slugify ) })">
+              <h4>{{elm.itemTitle}}</h4>
+              <!-- <h5>{{elm.owner}}</h5> -->
+              <div class="subTimestamp">{{elm.timestamp | dateFormat:'D/M/YYYY'}}</div>
+              <p>฿ {{elm.itemPrice}}</p>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="loadMoreSubList" ng-click="loadMoreSub(10)" ng-if="limitSubData <= openedElmDatas.length">
+            {{openedElmDatas.length - limitSubData}}
+          </div>
+        </div>
+      </div>
+</div>

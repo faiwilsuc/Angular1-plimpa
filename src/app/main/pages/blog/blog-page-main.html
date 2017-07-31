@@ -1,0 +1,37 @@
+<section class="blog-section" id="topBlog">
+    <div class="blogLoading toggle" ng-if="(postsAll | isEmpty)">
+        <div class="spinner"></div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="post-preview" ng-repeat="post in postsAll">
+                    <a ui-sref="blog.content({ id: post.id, titleSlug: ( post.title | slugify ) })">
+                        <h2 class="post-title">
+                           {{post.title}}
+                        </h2>
+                        <!-- <h3 class="post-subtitle">
+                          {{post.headline}}...
+                        </h3> -->
+                        <div class="post-subtitle" ng-bind-html="post.headline">...</div>
+                    </a>
+                    <p class="post-meta"><i class="fa fa-user" aria-hidden="true"></i> <a href="#">{{post.author}} </a> <i class="fa fa-clock-o" aria-hidden="true"></i> {{post.created_date | dateFormat:'D/MM/YYYY'}} </p>
+                </div>
+                <!-- Load more button -->
+                <!--<button class="btn btn-loadmore">Load more</button>-->
+            </div>
+            <div class="col-lg-3">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h3 class="post-aside-title">{{"BLOG.LATEST_POSTS"|translate}}</h3>
+                        <ul class="post-aside-list">
+                            <li ng-repeat="post in postsAll">
+                                <a ui-sref="blog.content({ id: post.id, titleSlug: ( post.title | slugify ) })">{{post.title}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

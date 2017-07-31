@@ -1,0 +1,34 @@
+<div class="container-fluid" ng-if="!fullMapLoaded" ng-controller="SortController">
+    <div class="row">
+        <div class="_navTwoBottom">
+            <ul class="_navTwoBottomList">
+                <li class="_navListDivider"></li>
+                <li class="_navTwoBottomDescr" ng-bind="'HEADER.PLACEHOLDER_SORTING' | translate"></li>
+                <li class="_navListDivider"></li>
+                <li ng-class=" {'activeDropDown': parentDropDown}">
+                    <a href="" ng-click="toggleParentDropDown($event)">{{filterName}}: {{filterType}} <i
+                        class="material-icons">keyboard_arrow_down</i></a>
+
+                    <div ng-show="parentDropDown" class="dropDownValParent" click-outside="closeParentDropDown()">
+                        <div class="_navFiltersDrop">
+                            <div class="_navFiltersDropItem" ng-repeat="elm in navSubOptions">
+                                <div class="_navFiltersDropBlock">
+                                    <h3 class="_navFiltersDropTitle" href="" ng-click="toggleMenuOpts(elm.id)">
+                                        {{elm.name | translate }}:</h3>
+
+                                    <div class="_navFiltersDropSelect"
+                                         ng-class="{'activeFilter':changedVal.reverse == el.id&&changedVal.val == elm.id}"
+                                         ng-repeat="el in elm.filtersName | orderBy: 'pr'"
+                                         ng-click="updateSubNavOpts(elm.id, el.id, (el.name | translate), (elm.name | translate)); ">
+                                        {{el.name | translate }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="_navListDivider"></li>
+            </ul>
+        </div>
+    </div>
+</div>

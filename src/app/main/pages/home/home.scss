@@ -1,0 +1,236 @@
+.homePromoContainer {
+    width: 100%;
+    min-height: 135px;
+    position: relative;
+    border-top: 0;
+    background-color: #f44336;
+    background-color: #ffffff;
+    padding: 72px;
+    display: inline-block;
+    .homePromo {
+        padding: 0;
+        margin: 0;
+        position: relative;
+        display: block;
+        list-style: none;
+        .homePromoElm {
+            width: 10%;
+            height: 60px;
+            display: inline-block;
+            padding: 5px;
+            &:last-child {
+                border-right: 0;
+            }
+            .homePromoIcons {
+                width: 40px;
+                height: 40px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                margin: 0 auto;
+                position: relative;
+                opacity: .58;
+                &:hover {
+                    pointer-events: none;
+                }
+            }
+        }
+        .homePromoMainLogo {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: -35px;
+            margin: 0 auto;
+            display: block;
+            width: 240px;
+            height: 120px;
+            // background-color: rgba(#f44336, 0.72);
+            z-index: 1;
+            background-image: url("../../assets/img/logo-main.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+}
+
+.homeBuyingIntroContainer {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    overflow: auto;
+    text-align: center;
+    position: relative;
+    background-color: #ffffff;
+    padding: 0;
+    display: block;
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+    .homeBuyingIntroItem {
+        width: auto;
+        margin: 0 auto;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        padding: 32px;
+        box-sizing: border-box;
+    }
+}
+
+h2.homePageTitle {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    font-size: 42px;
+    opacity: 1;
+    letter-spacing: -0.13rem;
+    color: #616161;
+    margin: 42px 0px 72px;
+    font-family: "roboto";
+    font-weight: 300;
+    span {
+        display: block;
+        font-size: 18px;
+        margin-top: 12px;
+        letter-spacing: 1px;
+        font-style: italic;
+        opacity: .8;
+        color: #616161;
+    }
+}
+
+.homeActionButton {
+    display: block;
+    margin: 12px auto;
+    position: relative;
+    left: 0;
+    right: 0;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.08), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    text-decoration: none;
+    color: #FFF;
+    text-align: center;
+    letter-spacing: 0.8px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background-clip: padding-box;
+    text-transform: uppercase;
+    border: none;
+    padding: 0 24px;
+    height: 50px;
+    margin-top: 28px;
+    font-size: 18px;
+    background-color: #e53935;
+    background-color: rgb(127, 190, 65);
+    margin-top: -12px;
+    margin-bottom: 72px;
+    a,
+    a:hover {
+        color: #FFF;
+        text-decoration: none;
+    }
+    &:hover {
+        background-color: rgb(127, 190, 65);
+        opacity: .86;
+    }
+}
+
+.homeBuyingIntroText {
+    border-right: 1px solid #eee;
+    margin-bottom: 32px;
+    margin-top: 32px;
+    &:last-child {
+        border-right: 0;
+    }
+    &.homeBuyingIntroTextNoBorders {
+        border: none;
+    }
+    img {
+        margin: 0 auto;
+        position: relative;
+        display: block;
+        opacity: .56;
+    }
+    .mainImg {
+        height: 100px;
+    }
+    i {
+        width: 100%;
+        height: 72px;
+        line-height: 72px;
+        font-size: 72px;
+        color: rgba(0, 0, 0, 0.4);
+        text-align: center;
+        display: block;
+        font-weight: 100;
+        font-family: "roboto";
+        font-style: normal;
+    }
+    h2 {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 20px;
+        color: rgba(0, 0, 0, 0.72);
+        color: #616161;
+        line-height: 36px;
+        font-weight: 300;
+        font-family: "roboto";
+    }
+    p {
+        font-size: 16px;
+        color: rgba(#000, .56);
+        font-family: "roboto";
+        text-align: center;
+    }
+}
+
+.cont-bg {
+    background-color: #f5f5f5;
+}
+
+@media (max-width: $mobile-width) {
+    h2.homePageTitle {
+        font-size: 28px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    .homeBuyingIntroText {
+        border: 0;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        &:last-child {
+            border: 0;
+        }
+        h2 {
+            margin-bottom: 0;
+            margin-top: 5px;
+        }
+        p {
+            font-size: 14px;
+        }
+    }
+    .homeBuyingIntroTextMobileHidden {
+        display: none;
+    }
+    .homePromoContainer {
+        padding: 72px 12px;
+        .homePromo {
+            .homePromoElm {
+                &:last-child {
+                    border-right: 0;
+                }
+                .homePromoIcons {
+                    width: 40px;
+                    height: 40px;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    margin: 0 auto;
+                    position: relative;
+                    opacity: 0;
+                }
+            }
+            .homePromoMainLogo {}
+        }
+    }
+}

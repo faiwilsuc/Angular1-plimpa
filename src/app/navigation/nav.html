@@ -1,0 +1,69 @@
+<nav class="topNav" ng-controller="NavigationController">
+    <div class="container-fluid topNavContent">
+        <div class="row">
+            <div class="col-md-2 col-sm-3 col-xs-4">
+                <div class="_navLogo" ng-click="goHome()"></div>
+            </div>
+
+            <div class="col-md-3 col-sm-5 col-xs-8 col-sm-offset-4 col-md-offset-0 col-md-push-7">
+                <div class="col-md-7 col-sm-8 col-xs-6 no-wrap">
+                    <ul class="_navMenu">
+                        <li>
+                            <div class="_navLang">
+                                <div class="_navLangs"
+                                     ng-class="{'gbp': lngVal.active == 'en', 'thai': lngVal.active == 'thai'}"
+                                     ng-click="showLngDrop = !showLngDrop"></div>
+                                <div ng-translate-language-select ng-show="showLngDrop"
+                                     click-outside="showLngDrop = false"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="_navCurreny">
+                                <span>฿</span>
+                            </div>
+                        </li>
+                        <li ng-mouseenter="navuserdrop = true" ng-mouseleave="navuserdrop = false">
+                            <div class="_navUser" ui-sref="home.my_account">
+                                <i class="material-icons">person_outline</i>
+                            </div>
+                            <div class="dropDownMenu" ng-show="navuserdrop && !(user | isEmpty)">
+                                <a ui-sref="home.my_account">My account </a>
+                                <a ng-click="logOut()">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-5 col-sm-4 col-xs-6 no-wrap">
+                    <div class="_navSellButton">
+                        <button id="sell_btn" ui-sref="home.post" class="btn" ng-disabled="responseWait">
+                            {{'HEADER.BTN_SELL' | translate}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 col-xs-12 col-md-pull-3">
+                <div class="col-sm-6 no-wrap">
+                    <div class="navSearchWrapper">
+                        <input id="search_keyword" type="search" class="navSearch"
+                               ng-model="search.keywords"
+                               placeholder="What are you looking for?"
+                               translate
+                               translate-attr-placeholder="HEADER.PLACEHOLDER_ITEM_SEARCH"
+                               ng-keyup="searchFieldKeyup($event)"
+                               ng-focus="navSimilars = true">
+                        <button ng-click="searchFormSubmit()"><i class="material-icons">search</i></button>
+                        <!-- <button ng-click="searchVal = ''"><i class="material-icons">close</i></button> -->
+                    </div>
+                </div>
+                <div class="col-sm-6 no-wrap">
+                    <div class="navSearchWrapper">
+                        <input type="search" id="searchmap_keyword" class="navZip" placeholder="Where?" translate
+                               translate-attr-placeholder="HEADER.PLACEHOLDER_LOCATION_SEARCH">
+                        <button id="searchmap_button"><i class="material-icons">place</i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-include="'app/navigation/sort_panel.html'" ng-if="!IsMobileDevice()"></div>
+</nav>

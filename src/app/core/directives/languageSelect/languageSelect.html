@@ -1,0 +1,40 @@
+<div>
+    <div class="languageSelect">
+        <div class="languageSelectList" ng-repeat="elm in localesDisplayNames" ng-click="changeLanguage(elm)">
+            <div class="lang" ng-class="{'gbt': $index == 1, 'thai': $index == 0}"></div>
+            <span>{{elm}}</span>
+            <!-- <span>English</span> -->
+        </div>
+        <!-- <div class="languageSelectList">
+            <div class="lang thai"></div>
+            <span>Thai</span>
+        </div>
+        <div class="languageSelectList">
+            <div class="lang au"></div>
+            <span>Australia</span>
+        </div>
+        <div class="languageSelectList">
+            <div class="lang nz"></div>
+            <span>New Zealand</span>
+        </div> -->
+    </div>
+    <!--  // template: '' +
+                //     '<div class="language-select" ng-if="visible">' +
+                //     '<label>' +
+                //     '{{"directives.language-select.Language" | translate}}:' +
+                //     '<select ng-model="currentLocaleDisplayName"' +
+                //     'ng-options="localesDisplayName for localesDisplayName in localesDisplayNames"' +
+                //     'ng-change="changeLanguage(currentLocaleDisplayName)">' +
+                //     '</select>' +
+                //     '</label>' +
+                //     '</div>' +
+                //     '', -->
+    <!-- <div class="language-select" ng-if="visible">
+    <label>
+        {{"directives.language-select.Language" | translate}}:
+        <select ng-model="currentLocaleDisplayName" ng-options="localesDisplayName for localesDisplayName in localesDisplayNames" ng-change="changeLanguage(currentLocaleDisplayName)">
+        </select>
+    </label>
+</div>
+ -->
+</div>

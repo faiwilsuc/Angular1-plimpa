@@ -1,0 +1,53 @@
+<stacked-menu
+  class="itemsFlat"
+  ng-class="{expanded: $ctrl.expand}"
+  export-ctrl="$ctrl.menuCtrl"
+  close-on-choose="false"
+  items-order="$ctrl.itemsOrder"
+  menus="$ctrl.menus"
+  get-menus="$ctrl.getMenus"
+  on-choose="$ctrl.onChoose(key, obj)">
+  <menu-header
+    ng-click="$ctrl.menuExpand($event)"
+    ng-bind="'NAVIGATION.ITEMS_AGGREGATED_HEADER' | translate">
+    <!--
+    <div ng-show="openedElmDatas == ''" class="col-md-12">
+      <h4>{{"NAVIGATION.PLACEHOLDER_EMPTY"|translate}}</h4>
+    </div>
+    -->
+  </menu-header>
+
+<!-- ng-repeat="elm in itemsList |limitTo: limitItems | orderBy: 'timestamp'" -->
+  <item-templates>
+    <div level="0">
+      <div class="itemIcon {{item0.iconClass}}">
+      </div>
+      <a href="">
+        {{ item0.title }}
+        <span class="badge"
+          ng-class="{spinner: item0.loading}">
+          {{item0.results.length}}
+        </span>
+      </a>
+    </div>
+
+    <div level="1" class="itemCard">
+      <div class="itemImage">
+        <a class="magnificImg">
+          <img class="" alt="{{item1.itemTitle}}"
+            ng-src="{{item1.img_url}}"
+            preload-image default-image="../../assets/img/no-image.png"
+            fallback-image="../../assets/img/no-image.png" />
+        </a>
+      </div>
+
+      <div class="itemDetail">
+        <h4 title="{{item1.itemTitle}}">{{item1.itemTitle}}</h4>
+        <!-- <h5>{{item0.owner}}</h5> -->
+        <div class="subTimestamp" ng-show="item1.timestamp"><i class="fa fa-clock-o" aria-hidden="true"></i> {{item1.timestamp | dateFormatLL:'D/M/YYYY'}}</div>
+        <h4 class="subLocation" ng-show="item1.location != ''"><i class="fa fa-globe" aria-hidden="true"> {{item1.location |  locationFormat}}</i></h4>
+        <p>฿ {{item1.itemPrice}}</p>
+      </div>
+    </div>
+  </item-templates>
+</div>

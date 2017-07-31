@@ -1,0 +1,211 @@
+.plimpa-tour {
+  border-radius: 2px;
+  border: none;
+  margin: 0;
+  padding: 9px 14px;
+  left: 218px;
+  max-width: 450px;
+  width: 450px;
+  h4 {
+    margin: -9px -14px;
+    padding: 14px 14px;
+    border-radius: 2px;
+    font-size: 22px;
+    text-align: center;
+    color: #4d4d4d;
+    background-color: #eee;
+  }
+  .plimpa-popup-content {
+    padding: 20px 14px;
+    .popup-info-block {
+      padding: 20px 0;
+      text-align: center;
+      .plimpa-popup-info {
+        width: 320px;
+        border: 2px solid #b3b3b3;
+      }
+    }
+    .plimpa-sub-descr {
+      font-size: 16px;
+      color: #4d4d4d;
+      text-align: center;
+    }
+  }
+  .popover-navigation {
+    padding: 18px 24px !important;
+    margin: -9px -14px !important;
+    border-radius: 2px;
+    background-color: #eee;
+    .plimpa-popup-button {
+      border-radius: 3px;
+      border: none;
+      font-size: 18px;
+      padding: 9px 20px;
+      margin-left: 5px;
+      background-color: #D32F2F;
+      color: #F9E2E2;
+      font-weight: initial;
+      outline: none;
+      &:hover {
+        box-shadow: 0 4px 7px rgba(0,0,0,0.2);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+      }
+    }
+    .plimpa-popup-button.skip {
+      background-color: #d0d0d0;
+      color: #6c6c6c;
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      i {
+        vertical-align: middle;
+      }
+    }
+    .plimpa-popup-button.more {
+      width: 260px;
+      float: right;
+    }
+    .plimpa-popup-button.thanks {
+      float: right;
+    }
+    .plimpa-popup-button.disabled {
+      opacity: 0.7;
+      &:hover {
+        box-shadow: 0 0 0 rgba(0,0,0,0);
+      }
+    }
+  }
+  i {
+    font-size: 16px;
+  }
+  .carousel-control {
+    display: none;
+  }
+  .carousel-indicators {
+    display: none;
+  }
+}
+.plimpa-tour.ad,.plimpa-tour.first {
+  .popover-navigation.ad {
+    text-align: center;
+    .plimpa-popup-button.thanks {
+      float: none;
+      width: 210px;
+    }
+  }
+}
+.plimpa-tour.first {
+  margin: 0 auto !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: 115px !important;
+  .plimpa-popup-bg-block {
+    margin: -9px -14px;
+    padding-bottom: 20px;
+    .plimpa-popup-bg {
+      border-radius: 2px;
+    }
+  }
+  .plimpa-popup-content.first {
+    padding-top: 0;
+  }
+  .plimpa-popup-descr {
+    text-align: center;
+    .plimpa-sub-title {
+      margin: 0;
+      font-size: 20px;
+      font-weight: bold;
+      color: #d71313;
+    }
+    .plimpa-sub-descr {
+      font-size: 20px;
+      line-height: 1.2;
+    }
+  }
+  .popover-navigation {
+    .plimpa-popup-button.skip {
+      position: absolute;
+      top: 23px;
+      right: 23px;
+      background-color: #ededed;
+      color: #bbb;
+    }
+    .plimpa-popup-button.back {
+      margin-left: 0;
+    }
+  }
+}
+.plimpa-tour.ad {
+  .popover-navigation {
+    .plimpa-popup-button.back {
+      margin-left: 0;
+      margin-right: 35px;
+    }
+    .plimpa-popup-button.thanks.sell {
+      float: right;
+      width: 260px
+    }
+  }
+}
+
+
+
+@media (max-width: $mobile-width) {
+  .plimpa-tour {
+    max-width: 90%;
+    width: 90%;
+    min-width: 300px;
+    .plimpa-popup-button.more {
+      width: 100%;
+    }
+    .plimpa-popup-button.skip {
+      width: 100%;
+      float: none !important;
+      margin-top: 5px;
+      font-size: 14px;
+    }
+    .plimpa-popup-button.thanks {
+      font-size: 14px;
+    }
+    .plimpa-popup-button.skip.first {
+      width: 94px;
+    }
+  }
+  .plimpa-tour.search, .plimpa-tour.ad {
+    .plimpa-popup-button.skip {
+      background-color: transparent;
+      color: transparent;
+      font-size: 14px;
+      width: 94px;
+      top: 2px;
+      right: 0;
+      &:hover {
+        box-shadow: none;
+      }
+      i {
+        color: #4d4d4d;
+        font-size: 20px;
+        &:hover {
+          color: #6c6c6c;
+        }
+      }
+    }
+    .plimpa-popup-button.back {
+      font-size: 14px;
+    }
+    .plimpa-popup-button.more, .plimpa-popup-button.thanks {
+      font-size: 14px;
+      width: 140px !important;
+    }
+  }
+  .plimpa-tour.search {
+    .plimpa-popup-button.back {
+      margin-right: 0 !important;
+    }
+  }
+  .plimpa-tour.ad {
+    .plimpa-popup-button.back {
+      margin-right: 24px !important;
+    }
+  }
+}

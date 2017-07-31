@@ -1,0 +1,114 @@
+<div class="authContainerBefore" ui-sref="home">
+</div>
+<div class="authContainer authContainerRegister nano">
+    <div ng-show="authIsLoading" class="authLoading">
+        <div class="spinner"></div>
+    </div>
+    <div class="nano-content">
+        <div class="authContainerHeader">
+            <h3>{{"REGISTER.HEADER"|translate}}</h3>
+            <i class="material-icons" ui-sref="home">close</i>
+        </div>
+        <div class="authContainerForm loginRegisterForm container-fluid">
+            <div class="row">
+                <form name="registerUser_form" novalidate>
+                    <div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="username" ng-change="checkUsername(registerUser.username)" ng-model="registerUser.username" ng-minlength=4 ng-maxlength=45 placeholder="Username" translate translate-attr-placeholder="REGISTER.PLACEHOLDER.USERNAME" ng-pattern="/^[a-zA-Z0-9-_\.]*$/" required>
+                            <input type="checkbox" name="userExistance" ng-show="false" ng-model="IsUserNoExist" required>
+                            <div class="alert alert-danger" role="alert" ng-show="registerUser.username&&!userSearching && IsUserExist">
+                                <a class="alert-link">
+                                {{registerUser.username}} {{"REGISTER.ALERT.USERNAME.TAKEN" |translate}}
+                            </a>
+                            </div>
+                            <div class="alert alert-success" role="alert" ng-show="registerUser.username&&!userSearching && IsUserNoExist">
+                                <a class="alert-link">
+                                {{registerUser.username}} {{"REGISTER.ALERT.USERNAME.AVAILABLE" |translate}}
+                            </a>
+                            </div>
+                            <div class="col-md-12">
+                                <small ng-show="userSearching">
+                                  {{"REGISTER.ALERT.USERNAME.SEARCHING" |translate}} {{registerUser.username}}...
+                            </small>
+                            </div>
+                            <div class="error" ng-show="registerUser_form.username.$dirty && registerUser_form.username.$invalid || registerUser_form.username.$error.pattern">
+                                <small class="error" ng-show="registerUser_form.username.$error.required">{{"REGISTER.ERR.USERNAME.REQUIRED" |translate}}</small>
+                                <small class="error" ng-show="registerUser_form.username.$error.minlength">{{"REGISTER.ERR.USERNAME.MIN" |translate}}</small>
+                                <small class="error" ng-show="registerUser_form.username.$error.maxlength">{{"REGISTER.ERR.USERNAME.MAX" |translate}}</small>
+                                <small class="error" ng-show="registerUser_form.username.$error.pattern">{{"REGISTER.ERR.USERNAME.PATTERN" |translate}}</small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" ng-model="registerUser.email" ng-change="checkEmail(registerUser.email)" ng-minlength=4 ng-maxlength=30 validate-email placeholder="Email address" translate translate-attr-placeholder="REGISTER.PLACEHOLDER.EMAIL" ng-pattern="emailValidationPattern" required>
+                            <input type="checkbox" name="emailExistance" ng-show="false" ng-model="IsEmailNoExist" required>
+                            <div class="alert alert-danger" role="alert" ng-show="registerUser.email&&!emailSearching && IsEmailExist">
+                                <a class="alert-link">
+                                {{registerUser.email}} {{"REGISTER.ALERT.EMAIL.TAKEN" |translate}}
+                            </a>
+                            </div>
+                            <div class="alert alert-success" role="alert" ng-show="registerUser.email&&!emailSearching && IsEmailNoExist">
+                                <a class="alert-link">
+                                {{registerUser.email}} {{"REGISTER.ALERT.EMAIL.AVAILABLE" |translate}}
+                            </a>
+                            </div>
+                            <div class="col-md-12">
+                                <small ng-show="emailSearching">
+                                  {{"REGISTER.ALERT.EMAIL.SEARCHING" |translate}} {{registerUser.email}}...
+                            </small>
+                            </div>
+                            <div class="error" ng-show="registerUser_form.email.$dirty && registerUser_form.email.$invalid || postAdd_form.email.$error.pattern">
+                                <small class="error" ng-show="registerUser_form.email.$error.required">{{"REGISTER.ERR.EMAIL.REQUIRED" |translate}}</small>
+                                <small class="error" ng-show="registerUser_form.email.$error.minlength">{{"REGISTER.ERR.EMAIL.MIN" |translate}}</small>
+                                <small class="error" ng-show="registerUser_form.email.$error.maxlength">{{"REGISTER.ERR.EMAIL.MAX" |translate}}</small>
+                                <small class="error" ng-show="registerUser_form.email.$error.email || postAdd_form.email.$error.pattern">{{"REGISTER.ERR.EMAIL.PATTERN" |translate}}</small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="password" name="password" ng-model="registerUser.password" ng-minlength=4 ng-maxlength=20 placeholder="Password" translate translate-attr-placeholder="REGISTER.PLACEHOLDER.PASS" required>
+                            <div class="error" ng-show="registerUser_form.password.$dirty && registerUser_form.password.$invalid">
+                                <small class="error" ng-show="registerUser_form.password.$error.required">{{"REGISTER.ERR.PASS.REQUIRED" |translate}}</small>
+                                <small class="error" ng-show="registerUser_form.password.$error.minlength">{{"REGISTER.ERR.PASS.MIN" |translate}}</small>
+                                <small class="error" ng-show="registerUser_form.password.$error.maxlength">{{"REGISTER.ERR.PASS.MAX" |translate}}</small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="password" name="confirm_password" ng-model="registerUser.confirm_password" ng-minlength=4 ng-maxlength=20 placeholder="Confirm Password" translate translate-attr-placeholder="REGISTER.PLACEHOLDER.CONFIRM_PASS" required>
+                            <div class="error" ng-show="registerUser_form.confirm_password.$dirty && registerUser_form.confirm_password.$invalid || registerUser_form.confirm_password_math.$error.required">
+                                <small class="error" ng-show="registerUser_form.confirm_password.$error.required">{{"REGISTER.ERR.PASS.REQUIRED_CONFIRM" |translate}}</small>
+                                <small class="error" ng-show="registerUser_form.confirm_password.$error.minlength">{{"REGISTER.ERR.PASS.MIN" |translate}}</small>
+                                <small class="error" ng-show="registerUser_form.confirm_password.$error.maxlength">{{"REGISTER.ERR.PASS.MAX" |translate}}</small>
+                                <small class="error" ng-show="!registerUser_form.confirm_password.$error.minlength&&!registerUser_form.confirm_password.$error.required&&registerUser_form.confirm_password_math.$error.required">
+                                  {{"REGISTER.ERR.PASS.CONFIRM" |translate}}
+                            </small>
+                            </div>
+                        </div>
+                        <div class="col-md-12 pfWrapper" ng-hide="true">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 pfLeft">
+                                    <p>
+                                        {{PassIncorrect}}
+                                    </p>
+                                    <input type="checkbox" name="confirm_password_math" ng-model="PassIncorrect" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-show="!userIsCreating">
+                            <button type="submit" class="btn btn-default" ng-disabled="registerUser_form.$invalid || ResponseSuccess" ng-click="onRegister(registerUser)">{{"REGISTER.BTN_REGISTER" |translate}}</button>
+                        </div>
+                        <div class="form-group" ng-show="userIsCreating">
+                            <button type="submit" class="btn btn-default" ng-disabled="true">{{"REGISTER.LBL_REGISTERING" |translate}}</button>
+                        </div>
+                    </div>
+                </form>
+                <ul class="authContainerFormActions">
+                    <li>
+                        <a ui-sref="home.forgot_password">{{"REGISTER.LINK_FORGOT_PASS" |translate}}</a>
+                    </li>
+                    <li>
+                        <a href="" ui-sref="home.login">{{"REGISTER.LINK_LOGIN" |translate}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

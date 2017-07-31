@@ -1,0 +1,44 @@
+<div class="container-fluid nano">
+    <div class="row nano-content postAddContainerFormInsider">
+        <div class="col-md-12">
+            <ul class="postAddSelectList">
+                <li ng-repeat="elm in CategoriesList" title="{{elm.name | translate}}" ng-click="selectCategory(elm)" ng-class="{'alert-success': AddItem.category == elm.id && AddItem.subcategory}">
+                    <!-- <li ng-repeat="elm in CategoriesList" title="{{elm.name | translate}}" ng-click="selectCategory(elm)" ng-class="{'subActive': AddItem.category == elm.id && AddItem.subcategory}"> -->
+                    <img ng-src="../../assets/img/category-icons/{{elm.image}}" alt="{{elm.name}}">
+                    <a href="" class="selectName">{{elm.name | translate}}</a>
+                    <!-- <div class="subHoverActive" ng-if="AddItem.category == elm.id && AddItem.subcategory">
+                        <img ng-src="../../assets/img/category-icons/{{elm.image}}" alt="{{elm.name}}">
+                        <a href="">{{"POST.CATEGORY.SELECTED"| translate}} {{openedCatListName |translate}} > {{openedCatListSubName|translate}}</a>
+                    </div> -->
+                </li>
+            </ul>
+            <div class=" col-md-12 error" ng-show="!AddItem.category||!AddItem.subcategory">
+                <br>
+                <small>{{"POST.CATEGORY.ERR"| translate}}</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 selectedInfo" ng-if="AddItem.subcategory">
+        <i class="material-icons">done</i>
+        <p>
+            <strong>{{"POST.CATEGORY.SELECTED"| translate}}</strong> {{AddItem.openedCatListName |translate}} > {{AddItem.openedCatListSubName|translate}}
+        </p>
+    </div>
+</div>
+<div class="postAddContainerFooter">
+    <div class="pfButtons">
+        <div class="pfContinue" ng-click="saveItemTemp(postAdd)" ui-sref="home.post.item" ng-class="{'pfDisabled': !AddItem.category || !AddItem.subcategory}">
+            {{"POST.BTN.NEXT"| translate}}
+        </div>
+    </div>
+</div>
+<div class="postAddSelectPopUpBefore" ng-show="showItemCatPopUp" ng-click="showItemCatPopUp = !showItemCatPopUp"></div>
+<div class="postAddSelectPopUp" ng-show="showItemCatPopUp">
+    <h5 class="postAddSelectPopUpHeader">{{AddItem.openedCatListName | translate}}</h5>
+    <a href="" ng-repeat="elm in SubcategoriesList" ng-click="selectSubcategory(elm)" ng-class="{'activeSubList': elm.id == AddItem.subcategory}" ng-show="SubcategoriesList" class="slide-left">
+        {{elm.name | translate }}
+    </a>
+    <div class="loadingWait slide-left" ng-if="showSpinnerSubList">
+        <div class="spinner"></div>
+    </div>
+</div>

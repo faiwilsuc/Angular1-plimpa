@@ -1,0 +1,36 @@
+ <div class="subCategories container-fluid" ng-show="itemVal">
+        <div class="col-md-12 no-padding extImgBlock">
+          <a class="magnificImg itemSingleImg" href="{{itemVal.img_url}}" ng-show="itemVal.img_url">
+            <img preload-image class="modalImg" ng-src="{{itemVal.img_url}}" alt="{{itemVal.img_url}}" default-image="../../assets/img/loader.gif" fallback-image="../../assets/img/no-image.png" style="margin:auto;">
+          </a>
+          <a class="magnificImg itemSingleImg" ng-show="!itemVal.img_url">
+            <img ng-src="../../assets/img/default-image.svg" alt="../../assets/img/default-image.svg" style="margin:auto;">
+          </a>
+        </div>
+        <div class="col-md-12 no-padding">
+          <h3>{{itemVal.itemTitle}}</h3>
+          <p>{{itemVal.itemPrice}} THB</p>
+          <div class="row publishedTime" ng-if="itemVal.timestamp || itemVal.location">
+            <div class="col-md-6" ng-show="itemVal.timestamp"><i class="material-icons">access_time</i><span>{{itemVal.timestamp | dateFormatLL:'D/M/YYYY'}}</span></div>
+            <div class="col-md-6 pull-right" ng-show="itemVal.location != ''"><i class="fa fa-globe" aria-hidden="true">{{itemVal.location | locationFormat}}</i></div>
+          </div>
+        </div>
+        <div>
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a data-target="#description" aria-controls="description" role="tab" data-toggle="tab">{{"ITEM.TAB.DESCRIPTION"|translate}}</a></li>
+            <!--<li role="presentation"><a data-target="#contacts" aria-controls="contacts" role="tab" data-toggle="tab">{{"ITEM.TAB.CONTACTS"|translate}}</a></li>-->
+          </ul>
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="description">
+              <div class="col-md-12" ng-bind-html="itemVal.description | contain_newlines">
+              </div>
+              <li>
+                <a type="button" ng-href="{{itemVal.product_url}}" class="btn btn-success"><i class="fa fa-external-link" aria-hidden="true"></i> {{"ITEM.SOURCE"|translate}}</a>
+              </li>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12"></div>
+      </div>
+

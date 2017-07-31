@@ -1,0 +1,144 @@
+<div class="container-fluid nano">
+    <div class="row nano-content postAddContainerFormInsider" id="postAddContainerFormInsider">
+        <form name="postAdd_form" class="postAddContainerFormInsiderCont">
+            <div class="col-md-12 pfWrapper">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 pfLeft">
+                        <label>{{"POST.INFO.TITLE"| translate}}</label>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 pfRight">
+                        <input type="text" placeholder="Enter Ad title Here" name="title" ng-model="AddItem.title" ng-minlength="4" ng-maxlength="60" ng-pattern="/^[-a-zA-Z0-9\.\,\_\u0370-\u1FFF]+(\s+[-a-zA-Z0-9\.\,\_\u0370-\u1FFF]+)*$/" required>
+                        <div class="error" ng-show="postAdd_form.title.$dirty && postAdd_form.title.$invalid">
+                            <small class="error" ng-show="postAdd_form.title.$error.pattern">
+                                {{"POST.INFO.ERROR.TITLE_CHECK_CHAR"| translate}}
+                              <br>
+                            </small>
+                            <small class="error" ng-show="postAdd_form.title.$error.required">{{"POST.INFO.ERROR.TITLE_REQUIRED"| translate}}</small>
+                            <small class="error" ng-show="postAdd_form.title.$error.minlength">{{"POST.INFO.ERROR.TITLE_MIN"| translate}}</small>
+                            <small class="error" ng-show="postAdd_form.title.$error.maxlength">{{"POST.INFO.ERROR.TITLE_MAX"| translate}}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 pfWrapper">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 pfLeft">
+                        <label>{{"POST.INFO.DESCRIPTION"| translate}}</label>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 pfRight">
+                        <textarea ng-focus="scrollCenter()" placeholder="Brief item description here" name="descr" ng-model="AddItem.descr" ng-minlength=20 ng-maxlength=1000 required></textarea>
+                        <div class="error" ng-show="postAdd_form.descr.$dirty && postAdd_form.descr.$invalid">
+                            <small class="error" ng-show="postAdd_form.descr.$error.required">{{"POST.INFO.ERROR.DESCR_REQUIRED"| translate}}</small>
+                            <small class="error" ng-show="postAdd_form.descr.$error.minlength">{{"POST.INFO.ERROR.DESCR_MIN"| translate}}</small>
+                            <small class="error" ng-show="postAdd_form.descr.$error.maxlength">{{"POST.INFO.ERROR.DESCR_MAX"| translate}}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-md-12 pfWrapper">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 pfLeft">
+                        <label>Category</label>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 pfRight">
+                        <select ng-model="AddItem.category" name="item_category" ng-selected="AddItem.category" ng-options="category.id as category.name for category in CategoriesList" required>
+                            <option value="">{{ !CategoriesList ? 'Loading categories' : 'Main Category'}}</option>
+                        </select>
+                        <small ng-if="!SubcategoriesList && AddItem.category">loading subcategories</small>
+                        <div class="error" ng-show="postAdd_form.item_category.$invalid ">
+                            <small class="error">Category is required.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 pfWrapper" ng-if="AddItem.category">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 pfRight">
+                        <select class="formItemLastCategory" ng-model="AddItem.subcategory" name="item_subcategory" ng-disabled="!AddItem.category" ng-selected="AddItem.subcategory" ng-options="subcategory.id as subcategory.name for subcategory in SubcategoriesList" style="display: inline-block;" required>
+                            <div ng-repeat="subcategory in SubcategoriesList">
+                                <option value="">Subcategory</option>
+                            </div>
+                        </select>
+                        <div class="error" ng-show="postAdd_form.item_subcategory.$dirty && postAdd_form.item_subcategory.$invalid || AddItem.category">
+                            <small class="error" ng-show="postAdd_form.item_subcategory.$error.required">Subcategory is required.</small>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="col-md-12 pfWrapper">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 pfLeft">
+                        <label>{{"POST.INFO.EMAIL"| translate}}</label>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 pfRight">
+                        <input ng-focus="scrollCenter()" type="email" placeholder="Contact Email" name="email" ng-model="AddItem.email" ng-minlength=3 ng-maxlength=60 validate-email name='email' ng-pattern="emailValidationPattern" required>
+                        <div class="error" ng-show=" postAdd_form.title.$invalid || postAdd_form.email.$error.pattern">
+                            <small class="error" ng-show="postAdd_form.email.$error.required">{{"POST.INFO.ERROR.EMAIL_REQUIRED"| translate}}</small>
+                            <small class="error" ng-show="postAdd_form.email.$error.minlength">{{"POST.INFO.ERROR.EMAIL_MIN"| translate}}</small>
+                            <small class="error" ng-show="postAdd_form.email.$error.maxlength">{{"POST.INFO.ERROR.EMAIL_MAX"| translate}}</small>
+                            <small class="error" ng-show="postAdd_form.email.$error.email || postAdd_form.email.$error.pattern">{{"POST.INFO.ERROR.EMAIL_INVALID"| translate}}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 pfWrapper">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 pfLeft">
+                        <label>{{"POST.INFO.PHONE"| translate}}</label>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 pfRight">
+                        <input ng-focus="scrollCenter()" type="text" placeholder="Contact Phone Number" name="phone" ng-model="AddItem.phone" ng-minlength=8 ng-maxlength=13>
+                        <div class="error" ng-show="postAdd_form.phone.$dirty && postAdd_form.phone.$invalid">
+                            <small class="error" ng-show="postAdd_form.phone.$error.minlength">{{"POST.INFO.ERROR.PHONE_MIN"| translate}}</small>
+                            <small class="error" ng-show="postAdd_form.phone.$error.maxlength">{{"POST.INFO.ERROR.PHONE_MAX"| translate}}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 pfWrapper">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 pfLeft">
+                        <label>{{"POST.INFO.PHOTOS"| translate}}</label>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 pfRight pfFotosCont">
+                        <div class="pfFotosElm">
+                            <input ng-focus="scrollCenter()" name="file" type="file" ngf-select ngf-change="onFileSelect($files)" ng-model="AddItem.imgFiles" ngf-accept="'image/*'" ngf-multiple="true" ngf-max-size="'5MB'" ngf-max-total-size="'50MB'" multiple>
+                        </div>
+                        <div class="loadingImage" ng-show="imageIsLoading && !postAdd_form.file.$error.maxSize"></div>
+                        <img class="pfFotosElm pfFotosElmAdded" preload-image ng-repeat="el in AddItem.imgFilesData track by $index" ng-src="{{mainUrl}}/items/image_temp/{{el}}/" alt="{{el}}" ng-show="AddItem.imgFilesData" default-image="../../assets/img/loader.gif" fallback-image="../../assets/img/loader.gif">
+                        <div class="pfFotosElm pfFotosElmAdded" ng-repeat="img in images" ngf-background="img" ng-show="images.length > 0"></div>
+                        <div class="col-md-12 error" ng-show="postAdd_form.file.$error.maxSize">
+                            <small>{{"POST.INFO.ERROR.PHOTOS_MAX"| translate}}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 pfWrapper" id="bottomIs">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 pfLeft">
+                        <label>{{"POST.INFO.PRICE"| translate}}</label>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 pfRight">
+                        <input ng-focus="scrollCenter()" type="number" placeholder="0.00 THB" name="price" ng-model="AddItem.price" ng-minlength=1 ng-maxlength=8 ng-pattern="/^[0-9]{1,10}$/" required>
+                        <small class="error" ng-show="postAdd_form.price.$error.pattern">{{"POST.INFO.ERROR.PRICE_PATTERN"| translate}}</small>
+                        <small class="error" ng-show="postAdd_form.price.$error.required">{{"POST.INFO.ERROR.PRICE_REQUIRED"| translate}}</small>
+                        <small class="error" ng-show="PriceIsInvalid">{{"POST.INFO.ERROR.PRICE_INVALID"| translate}}</small>
+                        <small class="error" ng-show="postAdd_form.price.$error.minlength">{{"POST.INFO.ERROR.PRICE_MIN"| translate}}</small>
+                        <small class="error" ng-show="postAdd_form.price.$error.maxlength">{{"POST.INFO.ERROR.PRICE_MAX"| translate}}</small>
+                        <small class="error" ng-show="postAdd_form.price.$error.number">{{"POST.INFO.ERROR.PRICE_NUMBER"| translate}}</small>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="postAddContainerFooter">
+    <div class="pfButtons">
+        <div class="pfContinue" ng-click="saveItemTemp(postAdd)" ui-sref="home.post.location" ng-class="{'pfDisabled': postAdd_form.$invalid}">
+            {{"POST.BTN.NEXT"| translate}}
+        </div>
+        <div class="pfPrevious" ui-sref="home.post">
+          {{"POST.BTN.BACK"| translate}}
+        </div>
+    </div>
+</div>

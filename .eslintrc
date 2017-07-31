@@ -1,0 +1,44 @@
+{
+  "extends": "eslint:recommended",
+  "plugins": [
+    "angular"
+  ],
+  "rules": {
+    "no-unused-vars": 0,
+    "no-console": 0,
+    "no-undef": 0,
+    "comma-dangle": 0,
+    "no-cond-assign": 0,
+    "no-unreachable": 0,
+    "no-redeclare": 0,
+    "no-extra-semi": 0,
+    "no-empty": 0,
+    "angular/di": [0],
+    angular/controller-as: 0,
+    angular/json-functions: 0,
+    angular/angularelement: 0,
+    angular/window-service: 0,
+    angular/controller-name: 0,
+    angular/no-services: 0,
+    angular/on-watch: 0,
+    angular/document-service: 0,
+    angular/log: 0,
+    angular/definedundefined: 0
+  },
+  "env": {
+    "browser": true,
+    "jasmine": true,
+    "jquery": true
+  },
+  "globals": {
+    "angular": true,
+    "module": true,
+    "inject": true,
+    "google": true,
+    "MarkerClusterer": true,
+    "ContextMenu": true,
+    "InitializeSearch": true,
+    "initAutocomplete": true,
+    "gmapCenterControl": true
+  }
+}

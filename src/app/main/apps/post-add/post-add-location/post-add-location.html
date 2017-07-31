@@ -1,0 +1,30 @@
+<div class="container-fluid nano">
+    <div class="row nano-content postAddContainerFormInsider postAddContainerFormLocation" id="postAddContainerFormInsider">
+        <form name="postAdd_form" class="postAddContainerFormInsiderCont">
+            <div class="col-md-12">
+                <h3 class="postAddContainerTitle">
+                  {{"POST.LOCATION.HEADER"| translate}}
+                </h3>
+            </div>
+            <div ng-if="(user | isEmpty) && AddItem.location.condo_address_iw">
+                <div ui-view="location-existing"></div>
+            </div>
+            <div ng-if="(user | isEmpty) && !AddItem.location.condo_address_iw  || !(user | isEmpty) && user.condo_id === 0">
+                <div ui-view="location-new"></div>
+            </div>
+            <div ng-if="!(user | isEmpty) && user.condo_id !== 0">
+                <div ui-view="location-confirm"></div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="postAddContainerFooter">
+    <div class="pfButtons">
+        <div class="pfContinue" ui-sref="home.post.social" ng-class="{'pfDisabled': postAdd_form.$invalid}">
+          {{"POST.BTN.NEXT"| translate}}
+        </div>
+        <div class="pfPrevious" ui-sref="home.post.item">
+          {{"POST.BTN.BACK"| translate}}
+        </div>
+    </div>
+</div>

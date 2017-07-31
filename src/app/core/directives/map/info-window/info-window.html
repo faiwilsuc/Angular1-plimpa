@@ -1,0 +1,73 @@
+<div class="iwHeader">
+    <h3>{{titleEng || iwlocation.title}}</h3>
+    <div class="iwHeaderElms">
+        <i class="material-icons" ng-click="iwclose()">close</i>
+        <i class="material-icons" ng-click="goToSelectedUrl(title)">add</i>
+        <i class="material-icons" ng-click="searchAround()">directions</i>
+    </div>
+</div>
+<ul class="iwSubMenus">
+    <li ng-click="iwSubToggle = false" ng-class="{'iwSubActive': !iwSubToggle}">{{ "INFOWINDOW.TAB_ITEMS" | translate }}</li>
+    <li ng-click="iwSubToggle = true" ng-class="{'iwSubActive': iwSubToggle}" ng-show="title.locationType !== 'STATION'">{{ "INFOWINDOW.TAB_HOUSING" | translate }}</li>
+</ul>
+<table class="iwListTable table" ng-if="iwdata == ''">
+    <thead>
+    <tr>
+        <th>
+            {{ "INFOWINDOW.PLACEHOLDER_EMPTY" | translate }}
+        </th>
+    </tr>
+    </thead>
+</table>
+<table class="iwListTable table" ng-if="iwdata != ''">
+    <thead>
+    <tr>
+        <th>{{"INFOWINDOW.FILTER.IMAGE" | translate}}</th>
+        <th>{{"INFOWINDOW.FILTER.NAME" | translate}}</th>
+        <th>{{"INFOWINDOW.FILTER.PRICE" | translate}}</th>
+        <th>{{"INFOWINDOW.FILTER.DATE" | translate}}</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="magnificImages" ng-repeat="el in iwdata | filter: {category_id: '!' + housingFilter, itemTitle: shoes}" ng-if="!iwSubToggle" ng-class="{'iwActive': el.itemTitle}">
+        <td class="itemImg">
+            <a class="magnificImg" ng-repeat="e in el.itemImages track by $index" ui-sref="home.item.info({ itemId: el.itemId, itemNameSlug: ( el.itemTitle | slugify ) })" ng-show="$index == 0">
+                <!-- <a class="magnificImg" ng-repeat="e in el.itemImages track by $index" href="{{getImageThumUrls(el.condoId, el.itemId, e)}}" ng-show="$index == 0"> -->
+                <img class="itemImgSrc" preload-image ng-src="{{getImageThumUrls(el.condoId, el.itemId, e)}}" alt="{{e}}" default-image="../../assets/img/loader.gif" fallback-image="../../assets/img/no-image.png">
+            </a>
+            <a href="" ng-show="el.itemImages | isEmpty">
+                <img class="itemImgSrc" ng-src="../../assets/img/no-image.png">
+            </a>
+        </td>
+        <td class="itemName">
+            {{el.itemTitle}}
+        </td>
+        <td>{{el.itemPrice}} THB</td>
+        <td>{{el.timestamp | dateFormat:'L'}}</td>
+        <td>
+            <button class="btn" ui-sref="home.item.info({ itemId: el.itemId, itemNameSlug: ( el.itemTitle | slugify ) })">{{"INFOWINDOW.BTN_VIEW" | translate}}</button>
+        </td>
+    </tr>
+    <tr ng-repeat="el in iwdata | filter: {category_id: housingFilter}" ng-if="iwSubToggle" ui-sref="home.item.info({ itemId: el.itemId, itemNameSlug: ( el.itemTitle | slugify ) })">
+        <td class="itemImg">
+            <a class="magnificImg" ng-repeat="e in el.itemImages track by $index" ui-sref="home.item.info({ itemId: el.itemId, itemNameSlug: ( el.itemTitle | slugify ) })" ng-show="$index == 0">
+                <!-- <a class="magnificImg" ng-repeat="e in el.itemImages track by $index" href="{{getImageThumUrls(el.condoId, el.itemId, e)}}" ng-show="$index == 0"> -->
+                <img class="itemImgSrc" preload-image ng-src="{{getImageThumUrls(el.condoId, el.itemId, e)}}" alt="{{e}}" default-image="../../assets/img/loader.gif" fallback-image="../../assets/img/no-image.png">
+            </a>
+            <a ui-sref="home.item.info({ itemId: el.itemId, itemNameSlug: ( el.itemTitle | slugify ) })" ng-show="el.itemImages | isEmpty">
+                <img class="itemImgSrc" ng-src="../../assets/img/no-image.png">
+            </a>
+        </td>
+
+        <td class="itemName">
+            {{el.itemTitle}}
+        </td>
+        <td>{{el.itemPrice}}THB</td>
+        <td>{{el.timestamp | dateFormat:'L'}}</td>
+        <td>
+            <button class="btn" ui-sref="home.item.info({ itemId: el.itemId, itemNameSlug: ( el.itemTitle | slugify ) })">view</button>
+        </td>
+    </tr>
+    </tbody>
+</table>

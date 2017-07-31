@@ -1,0 +1,52 @@
+<div class="authContainerBefore" ui-sref="home">
+</div>
+<div class="authContainer">
+    <div ng-show="startChecking" class="authLoading">
+        <div class="spinner"></div>
+    </div>
+    <div class="authContainerHeader">
+        <h3>{{"LOGIN.HEADER" |translate}}</h3>
+        <i class="material-icons" ui-sref="home">close</i>
+    </div>
+    <div class="container-fluid authContainerForm" ng-class="{'loginRegisterForm': userRegister}">
+        <div class="row">
+            <form action="/api/signin/facebook" method="POST" id="fbLoginForm" target="_self">
+                <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
+                    <a href="" class="fbLogin" onclick="document.getElementById('fbLoginForm').submit();">
+                        <i class="fa fa-facebook"></i> Sign in with Facebook
+                    </a>
+                </div>
+            </form>
+            <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
+                <hr>
+            </div>
+            <form name="loginForm">
+                <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="exampleInputEmail1" ng-model="credentials.username" placeholder="Username or email" translate translate-attr-placeholder="LOGIN.USERNAME" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="exampleInputPassword1" ng-model="credentials.password" placeholder="Password" translate translate-attr-placeholder="LOGIN.PASS" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-default" ng-click="onLogin(credentials)" ng-disabled="startChecking || loginForm.$invalid">{{startChecking ? 'Checking' :'Login'}}</button>
+                        <!-- <button type="submit" class="btn btn-default" ng-click="onLogin(credentials)">Login</button> -->
+                    </div>
+                </div>
+                <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12" ng-show="LoginError">
+                    <div class="error">
+                        <div>{{LoginError}}</div>
+                    </div>
+                </div>
+            </form>
+            <ul class="authContainerFormActions">
+                <li>
+                    <a ui-sref="home.forgot_password">{{"LOGIN.LINK_FORGOT_PASS"|translate}}</a>
+                </li>
+                <li>
+                    <a href="" ui-sref="home.register">{{"LOGIN.LINK_REGISTER"|translate}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

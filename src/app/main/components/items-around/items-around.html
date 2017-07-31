@@ -1,0 +1,37 @@
+<stacked-menu
+  class="itemsCards"
+  menus="$ctrl.menus"
+  items-order="$ctrl.itemsOrder"
+  items-limit="$ctrl.itemsLimit"
+  filter-all-levels="true"
+  on-navigate="$ctrl.showInMap(obj, menuCtrl)">
+  <menu-header
+    ng-bind="'NAVIGATION.ITEMS_AROUND_YOU_HEADER' | translate">
+    <!--
+    <div ng-show="openedElmDatas == ''" class="col-md-12">
+      <h4>{{"NAVIGATION.PLACEHOLDER_EMPTY"|translate}}</h4>
+    </div>
+    -->
+  </menu-header>
+
+<!-- ng-repeat="elm in itemsList |limitTo: limitItems | orderBy: 'timestamp'" -->
+  <item-templates>
+    <div level="0" class="">
+      <div class="itemImage">
+        <a class="magnificImg">
+          <img class="" alt="{{el}}"
+            ng-src="{{$ctrl.getThumb(item0, 0)}}"
+            preload-image default-image="../../assets/img/no-image.png"
+            fallback-image="../../assets/img/no-image.png" />
+        </a>
+      </div>
+
+      <div class="itemDetail">
+        <h4 title="{{item0.itemTitle}}">{{item0.itemTitle}}</h4>
+        <!-- <h5>{{item0.owner}}</h5> -->
+        <div class="subTimestamp">{{item0.timestamp | dateFormat:'D/M/YYYY'}}</div>
+        <p>฿ {{item0.itemPrice}}</p>
+      </div>
+    </div>
+  </item-templates>
+</div>

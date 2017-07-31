@@ -1,0 +1,378 @@
+{
+    "directives.language-select.Language": "Language",
+    "HEADER": {
+        "FILTER_NAME": {
+            "NAME": "Name",
+            "SORT": "A to Z",
+            "REVERT": "Z to A"
+        },
+        "FILTER_PRICE": {
+            "NAME": "Price",
+            "SORT": "High to Low",
+            "REVERT": "Low to High"
+        },
+        "FILTER_DATE": {
+            "NAME": "Date",
+            "SORT": "New to Old",
+            "REVERT": "Old to New"
+        },
+        "BTN_SELL": "SELL ITEMS",
+        "PLACEHOLDER_SORTING": "Sort By",
+        "PLACEHOLDER_ITEM_SEARCH": "What are you looking for?",
+        "PLACEHOLDER_LOCATION_SEARCH": "Where?"
+    },
+    "NAVIGATION": {
+        "PLACEHOLDER_EMPTY": "Nothing here yet..",
+        "ITEMS_AROUND_YOU_HEADER":"Items around you",
+        "ITEMS_AGGREGATED_HEADER":"On other platforms",
+        "BTN": {
+            "BACK": "« Back",
+            "NEXT": "Next »"
+        },
+        "MOBILE":{
+          "TAB":{
+            "LIST": "List",
+            "MAP": "Map",
+            "BROWSE": "Browse",
+            "AROUND": "Close to you",
+            "LOCAL": "Local items",
+            "OTHER": "On other platforms"
+          },
+          "BTN": {
+            "OTHER_PLATFORMS": "Find elsewhere!"
+          }
+        }
+    },
+    "MAIN": {
+        "TAB": {
+          "BROWSER": "List of items",
+          "AROUND": "Items around you",
+          "MAP": "Items on map"
+        }
+    },
+    "ITEM": {
+        "BUTTON": "Show on map",
+        "PHONE": "Phone",
+        "EMAIL": "Email",
+        "SOURCE": "Check the original post",
+        "TAB": {
+            "DESCRIPTION": "Description",
+            "CONTACTS": "Contacts"
+        }
+    },
+    "INFOWINDOW": {
+        "TAB_ITEMS": "Items",
+        "TAB_HOUSING": "Housing",
+        "PLACEHOLDER_EMPTY": "Nothing yet is at this place.",
+        "FILTER": {
+            "IMAGE": "Image",
+            "NAME": "Name",
+            "PRICE": "Price",
+            "DATE": "Posted"
+        },
+        "BTN_VIEW": "View"
+    },
+    "LOCATION": {
+        "TYPE": {
+            "CONDO": "Living/Office",
+            "STATION": "Public Traffic",
+            "MALL": "Mall/Market"
+        }
+    },
+    "PROFILE": {
+        "HEADER": {
+            "MAIN": "My account",
+            "LOCATION": "My Location",
+            "ADS": "My advertisements",
+            "LOGOUT": "Logout"
+        },
+        "PLACEHOLDER": {
+            "USERNAME": "Username",
+            "EMAIL": "Email",
+            "PASSWORD": "Password",
+            "RE-PASSWORD": "Re Password",
+            "SEARCH_LOCATION": "Search Location"
+        },
+        "BTN": {
+            "NAV_PROFILE": "My Profile",
+            "NAV_LOCATION": "Home Location",
+            "NAV_ADS": "My Ads",
+            "UPDATE_PROFILE": "Update",
+            "CHANGE_LOCATION": "Change home location",
+            "CANCEL": "Cancel"
+        },
+        "LOCATION": {
+            "UPDATE_CALL": "Update Home Location",
+            "LAST_UPD": "Last updated:",
+            "ADDR_CURRENT": "Your current address:",
+            "INFO_1": "You can update your",
+            "INFO_2": "location once in 3 days",
+            "NEW_LOCATION": "New location:",
+            "CONFIRM_CHANGE": "Confirm change location"
+        },
+        "ADS": {
+            "EMPTY_PLACEHOLDER": "You didn't post any items yet",
+            "FILTER": {
+                "IMAGE": "@:INFOWINDOW.FILTER.IMAGE",
+                "NAME": "@:INFOWINDOW.FILTER.NAME",
+                "PRICE": "@:INFOWINDOW.FILTER.PRICE",
+                "DATE": "@:INFOWINDOW.FILTER.DATE"
+            },
+            "STATUS": "Status",
+            "ACTION": "Action"
+        }
+    },
+    "POST": {
+        "BTN": {
+            "NEXT": "Next",
+            "BACK": "Back",
+            "SUBMIT": "Submit",
+            "SUBMIT_REG": "Register & Publish"
+        },
+        "CATEGORY.ERR": "Select one of the category to continue",
+        "CATEGORY.SELECTED": "Selected:",
+        "INFO": {
+            "TITLE": "Title",
+            "DESCRIPTION": "Description",
+            "EMAIL": "Email",
+            "PHONE": "Phone",
+            "PHOTOS": "Photos",
+            "PRICE": "Price",
+            "ERROR": {
+                "TITLE_CHECK_CHAR": "Please check there not any special characters in your title",
+                "TITLE_REQUIRED": "Title is required.",
+                "TITLE_MIN": "Your name is required to be at least 3 characters",
+                "TITLE_MAX": "Your name cannot be longer than 45 characters",
+                "DESCR_REQUIRED": "Description is required.",
+                "DESCR_MIN": "Your description is required to be at least 20 characters",
+                "DESCR_MAX": "Your description cannot be longer than 1000 characters",
+                "EMAIL_REQUIRED": "email is required.",
+                "EMAIL_MIN": "Your email is required to be at least 3 characters",
+                "EMAIL_MAX": "Your email cannot be longer than 30 characters",
+                "EMAIL_INVALID": "That is not a valid email. Please input a valid email.",
+                "PHONE_MIN": "Your phone number is required to be at least 8 characters. Example: 091-1233-12333",
+                "PHONE_MAX": "Your name cannot be longer than 13 characters. Example: 091-1233-12333",
+                "PHOTOS_MAX": "File maximum size limit: 5 Mb",
+                "PRICE_MIN": "Price is required to be at least 1 characters",
+                "PRICE_MAX": "Price cannot be longer than 8 characters",
+                "PRICE_NUMBER": "Price can be only numeric! e. 12345",
+                "PRICE_PATTERN": "Price too high.",
+                "PRICE_INVALID": "Correct price format: 100.00",
+                "PRICE_REQUIRED": "Price is required."
+            }
+        },
+        "LOCATION": {
+            "HEADER": "Plimpa is location-based marketplace. Enter your item pickup location below or choose one from Map.",
+            "NAME": "Name",
+            "ADDR": "Address",
+            "MARK": "Mark on Map",
+            "SHOW_MAP": "Map",
+            "TYPE.HEADER": "Type",
+            "NOTE": "NOTE:<br> Only valid location will be accepted.",
+            "CONFIRM": {
+                "CHANGE_LOCATION_NOAUTH": "Change address",
+                "YOUR_LOCATION": "Your Location:",
+                "CHANGE_LOCATION": "Change your account <br>location in settings.",
+                "SETTINGS": "Settings"
+            },
+            "ERR": {
+                "ADDR_REQUIRED": "Address is required.",
+                "ADDR_MIN": "Your address is required to be at least 4 characters",
+                "ADDR_MAX": "Your address cannot be longer than 60 characters",
+                "NAME_REQUIRED": "Apartment/Building name is required.",
+                "NAME_MIN": "Your Apartment/Building name is required to be at least 4 characters",
+                "NAME_MAX": "Your Apartment/Building name cannot be longer than 30 characters"
+            }
+        },
+        "SOCIAL": {
+            "SELECT": "Multiple your reach, get reposts at:"
+        },
+        "COMPLETE": {
+            "SUCCESS": {
+                "TITLE": "Congratulations! Your post have been successfully added.",
+                "TEXT_1": "To check the status, kindly visit your account menu:",
+                "INFO": "- for non existing location, posting will be approved within 24 hours.",
+                "NOTE": "Note: ",
+                "BTN_ADS": "Posted Items"
+            },
+            "FAIL": {
+                "TITLE": "Unfortunately some error had happened.",
+                "INFO": "Please send us error info and we will fix it as soon as possible!",
+                "BTN_SEND": "Send Error Info"
+            }
+        },
+        "REGISTER": {
+            "NOTE": "Please fill the new account information, if you don't have one.",
+            "LBL_USERNAME": "Username",
+            "LBL_EMAIL": "Email",
+            "LBL_PASS": "Password",
+            "LBL_REPASS": "Re-type Password",
+            "OR": "OR",
+            "SIGNIN": "Sign in"
+        }
+    },
+    "REGISTER": {
+        "HEADER": "Register Account",
+        "PLACEHOLDER": {
+            "USERNAME": "Username",
+            "PASS": "Password",
+            "CONFIRM_PASS": "Confirm Password",
+            "EMAIL": "Email address"
+        },
+        "ALERT": {
+            "USERNAME": {
+                "TAKEN": "is taken",
+                "AVAILABLE": "is available",
+                "SEARCHING": "searching username existence for "
+            },
+            "EMAIL": {
+                "TAKEN": "is taken",
+                "AVAILABLE": "is available",
+                "SEARCHING": "searching email existence for "
+            }
+        },
+        "ERR": {
+            "USERNAME": {
+                "REQUIRED": "Username is required.",
+                "MIN": "Your username is required to be at least 3 characters",
+                "MAX": "Your username cannot be longer than 20 characters",
+                "PATTERN": "No special characters and spaces allowed in username (only '.','-','_' is allowed)"
+            },
+            "EMAIL": {
+                "REQUIRED": "Email is required.",
+                "MIN": "Your email is required to be at least 3 characters",
+                "MAX": "Your email cannot be longer than 20 characters",
+                "PATTERN": "Please input a valid email."
+            },
+            "PASS": {
+                "REQUIRED": "Password is required.",
+                "REQUIRED_CONFIRM": "Password confirmation is required.",
+                "MIN": "Your password is required to be at least 3 characters",
+                "MAX": "Your password cannot be longer than 20 characters",
+                "CONFIRM": "Password does not match"
+            }
+        },
+        "BTN_REGISTER": "Register",
+        "LBL_REGISTERING": "Registering...",
+        "LINK_FORGOT_PASS": "Forgot password",
+        "LINK_LOGIN": "Login"
+    },
+    "LOGIN": {
+        "HEADER": "Login to Account",
+        "USERNAME": "Username or email",
+        "PASS": "Password",
+        "LINK_FORGOT_PASS": "@:REGISTER.LINK_FORGOT_PASS",
+        "LINK_REGISTER": "Register"
+    },
+    "HOME": {
+        "TEXT": {
+            "HEADER_1": "Buy, sell and trade with local communities <br>around you",
+
+            "HEADER_2": "Selling is free, quick & easy",
+            "SUBHEADER_1": "Post an ad",
+            "SHORT_1": "Include a detailed description of the condition of your item with photos and a price.",
+            "SUBHEADER_2": "Sell locally",
+            "SHORT_2": "Set your item pick up location to your home work/office or a public place near you.",
+            "SUBHEADER_3": "Improve your chances",
+            "SHORT_3": "Our technology will post to facebook local buyer/seller groups, twitter and popular classified ads platform.",
+
+            "HEADER_3": "Buy and trade from locals",
+            "SUBHEADER_4": "Search via the local map",
+            "SHORT_4": "Browse our popular categories to find listings closest to you",
+            "SUBHEADER_5": "Search via the toolbar",
+            "SHORT_5": "Type in what you’re looking for and see your local listings",
+            "SUBHEADER_6": "No vague ads",
+            "SHORT_6": "Only see ads that are local and relevant to your search"
+        }
+    },
+    "BLOG": {
+      "AUTHOR": "Posted by",
+      "ON_DATE": "on",
+      "LATEST_POSTS": "Latest posts",
+      "FOOTER": {
+        "TEXT": "Want to buy or sell something?",
+        "BTN_SELL": "SELL",
+        "BTN_BUY": "BUY"
+      }
+    },
+    "CATEGORY": {
+        "Electronics": "Electronics",
+        "Furniture": "Furniture",
+        "Mobile": "Mobile",
+        "Fashion": "Fashion",
+        "Housing": "Housing",
+        "Services": "Services",
+        "Jobs": "Jobs",
+        "Community": "Community",
+        "Cars+Trucks": "Cars+Trucks",
+        "Motorbikes": "Motorbikes",
+        "Other": "Other",
+        "Hobbies": "Hobbies",
+        "Baby Stuff": "Baby Stuff"
+    },
+    "SUBCATEGORY": {
+        "Computers": "Computers",
+        "Cameras & Accessories": "Cameras & Accessories",
+        "TV & Audio & Video": "TV & Audio & Video",
+        "Video games & Consoles": "Video games & Consoles",
+        "Gadgets": "Gadgets",
+        "Other electronic items": "Other electronic items",
+        "Home Appliances": "Home Appliances",
+        "Building Materials": "Building Materials",
+        "Furniture": "Furniture",
+        "Garden": "Garden",
+        "Home Decor": "Home Decor",
+        "Mobile phones": "Mobile phones",
+        "Tablets": "Tablets",
+        "Accessories": "Accessories",
+        "Men's Clothing": "Men's Clothing",
+        "Woman's Clothing": "Woman's Clothing",
+        "Bags": "Bags",
+        "Jewellery & Watches": "Jewellery & Watches",
+        "Beauty products": "Beauty products",
+        "Buy": "Buy",
+        "Sell": "Sell",
+        "Rent": "Rent",
+        "Entertainment": "Entertainment",
+        "Legal": "Legal",
+        "Repair": "Repair",
+        "Finance": "Finance",
+        "Cars": "Cars",
+        "Trucks": "Trucks",
+        "Hire": "Hire",
+        "Find": "Find",
+        "Music": "Music",
+        "Art & Painting": "Art & Painting",
+        "Bicycles": "Bicycles",
+        "Yamaha": "Yamaha",
+        "Honda": "Honda",
+        "Kawasaki": "Kawasaki",
+        "Suzuki": "Suzuki",
+        "BMW": "BMW",
+        "Ducati": "Ducati",
+        "Harley Davidson": "Harley Davidson",
+        "Benelli": "Benelli",
+        "All": "All",
+        "Other": "Other"
+    },
+    "TOUR":{
+      "POPUP": {
+        "SEARCH":{
+          "HEADER": "Aggregated search",
+          "BODY": "<b>Plimpa's search</b> let you find advertisements on <b>multiple platforms</b> in one go."
+        },
+        "REPOST":{
+          "HEADER": "Ad repost",
+          "BODY": "<b>Multiply your reach</b> with ad repost feature. Post your ad on multiple platforms in one click!"
+        },
+        "FIRST":{
+          "HEADER": "Hey!",
+          "BODY": "Explore Plimpa's <b>smart features</b><br>to <b>Buy</b> and <b>Sell</b> on wider scale"
+        },
+        "BTN_SKIP": "Skip <i class='fa fa-times' aria-hidden='true'></i>",
+        "BTN_THANKS": "Thanks!",
+        "BTN_START": "Let's Explore!",
+        "BTN_NEXT": "Show me more!"
+      }
+    }
+}

@@ -1,0 +1,27 @@
+<ng-transclude></ng-transclude>
+<div ng-show="!markersPutted" class="mapLoading toggle">
+    <div class="mapLoadingBg"></div>
+    <div class="spinner"></div>
+</div>
+<div ng-show="responseWait" class="mapLoading toggle" style="opacity: .4">
+    <div class="mapLoadingBg"></div>
+    <div class="spinner"></div>
+</div>
+<div ng-show="!$root.IsMobileDevice()" class="mapReminder" id="condoSelect">
+    <ul>
+        <li class="condo">
+            <a href="">{{"LOCATION.TYPE.CONDO"|translate}}</a>
+            <span></span>
+        </li>
+        <li class="station">
+            <a href="">{{"LOCATION.TYPE.STATION"|translate}}</a>
+            <span></span>
+        </li>
+        <li class="mall">
+            <a href="">{{"LOCATION.TYPE.MALL"|translate}}</a>
+            <span></span>
+        </li>
+    </ul>
+</div>
+<div class="homeMap" id="indexmap">
+</div>
